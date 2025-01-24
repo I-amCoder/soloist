@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35312.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcmHackathonBackend", "AcmHackathonBackend\AcmHackathonBackend.csproj", "{617C0879-0565-47C0-B603-D30751BBD1D5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{617C0879-0565-47C0-B603-D30751BBD1D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{617C0879-0565-47C0-B603-D30751BBD1D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{617C0879-0565-47C0-B603-D30751BBD1D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{617C0879-0565-47C0-B603-D30751BBD1D5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {11FB7E0E-7830-4877-AE13-7569FBF50027}
+	EndGlobalSection
+EndGlobal
