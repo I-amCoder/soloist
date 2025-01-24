@@ -1,0 +1,57 @@
+{
+  "executives": [
+    {
+      "id": 1,
+      "name": "Sarah Chen",
+      "role": "President",
+      "image": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e",
+      "description": "Leading ACM's vision for innovative hackathons and tech events. Passionate about creating inclusive tech communities and fostering innovation through collaborative events.",
+      "department": "Computer Science",
+      "year": "Senior",
+      "socialLinks": {
+        "linkedin": "https://linkedin.com/in/sarahchen",
+        "github": "https://github.com/sarahchen",
+        "twitter": "https://twitter.com/sarahchen"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Michael Rodriguez",
+      "role": "Technical Director",
+      "image": "https://images.unsplash.com/photo-1556157382-97eda2f9e2bf",
+      "description": "Overseeing technical aspects of our hackathon platforms. Expert in cloud infrastructure and DevOps practices with a focus on scalable solutions.",
+      "department": "Software Engineering",
+      "year": "Junior",
+      "socialLinks": {
+        "linkedin": "https://linkedin.com/in/mrodriguez",
+        "github": "https://github.com/mrodriguez"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Aisha Patel",
+      "role": "Event Coordinator",
+      "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2",
+      "description": "Organizing and managing our signature hackathon events. Specializes in creating engaging tech events that bring together students and industry professionals.",
+      "department": "Business Analytics",
+      "year": "Senior",
+      "socialLinks": {
+        "linkedin": "https://linkedin.com/in/aishapatel",
+        "twitter": "https://twitter.com/aishapatel"
+      }
+    },
+    {
+      "id": 4,
+      "name": "David Kim",
+      "role": "Marketing Lead",
+      "image": "https://images.unsplash.com/photo-1542190891-2093d38760f2",
+      "description": "Driving outreach and community engagement for our hackathon initiatives. Focused on building partnerships and expanding our reach in the tech community.",
+      "department": "Marketing",
+      "year": "Junior",
+      "socialLinks": {
+        "linkedin": "https://linkedin.com/in/davidkim",
+        "twitter": "https://twitter.com/davidkim"
+      }
+    }
+  ]
+} 

@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useTheme } from '../../context/ThemeContext';
 import ThemeToggle from '../ThemeToggle';
+import { NAV_ITEMS } from '../../data/navigation';
 
 const Navbar = () => {
   const { theme } = useTheme();
@@ -17,12 +18,6 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const navItems = [
-    { path: '/events', label: 'Events' },
-    { path: '/projects', label: 'Projects' },
-    { path: '/about', label: 'About' }
-  ];
 
   return (
     <motion.nav
@@ -64,7 +59,7 @@ const Navbar = () => {
 
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav mx-auto">
-            {navItems.map((item) => (
+            {NAV_ITEMS.filter(item => item.path !== '/').map((item) => (
               <motion.li 
                 key={item.path} 
                 className="nav-item"

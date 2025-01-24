@@ -7,6 +7,7 @@ import NotFound from './components/Pages/Error/NotFound';
 
 // Lazy load components
 const Home = React.lazy(() => import('./components/Pages/Home'));
+const Team = React.lazy(() => import('./components/Pages/Team'));
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Suspense fallback={<LoadingSpinner />}>
             <Routes>
               <Route exact path="/" element={<Home />} />
+              <Route path="/team" element={<Team />} />
               <Route path="/404" element={<NotFound />} />
               <Route path="*" element={<Navigate to="/404" replace />} />
             </Routes>
