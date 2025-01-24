@@ -1,0 +1,43 @@
+.hero-container {
+  position: relative;
+  background-color: var(--bs-body-bg);
+}
+
+.text-gradient {
+  background: linear-gradient(45deg, #2196F3, #00BCD4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+.floating-elements {
+  position: relative;
+  height: 400px;
+}
+
+.hero-bg {
+  transition: all 0.3s ease;
+}
+
+.overlay {
+  transition: opacity 0.3s ease;
+}
+
+/* Custom animation keyframes */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .floating-elements {
+    height: 300px;
+  }
+  
+  .text-gradient {
+    font-size: 2.5rem;
+  }
+} 
