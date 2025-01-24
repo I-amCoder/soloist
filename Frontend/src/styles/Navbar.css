@@ -25,7 +25,7 @@
   left: 50%;
   width: 0;
   height: 2px;
-  background: var(--bs-primary);
+  background: var(--color-primary);
   transition: all 0.3s ease;
   transform: translateX(-50%);
 }
@@ -36,7 +36,7 @@
 }
 
 .navbar-brand .text-gradient {
-  background: linear-gradient(45deg, #2196F3, #00BCD4);
+  background: var(--gradient-brand);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -53,7 +53,7 @@
 
 /* Dark theme specific styles */
 .navbar-dark .nav-link {
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--color-text);
 }
 
 .navbar-dark .nav-link:hover {
@@ -62,7 +62,7 @@
 
 /* Light theme specific styles */
 .navbar-light .nav-link {
-  color: rgba(0, 0, 0, 0.8);
+  color: var(--color-text);
 }
 
 .navbar-light .nav-link:hover {
@@ -72,7 +72,7 @@
 /* Responsive adjustments */
 @media (max-width: 991.98px) {
   .navbar-collapse {
-    background: var(--bs-body-bg);
+    background: var(--color-background);
     padding: 1rem;
     border-radius: 0.5rem;
     margin-top: 0.5rem;

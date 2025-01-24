@@ -1,0 +1,39 @@
+:root {
+  /* Primary Colors */
+  --color-primary: #6366f1;
+  --color-primary-dark: #4f46e5;
+  --color-secondary: #64748b;
+  --color-secondary-dark: #475569;
+  --color-success: #22c55e;
+  --color-success-dark: #16a34a;
+  --color-danger: #ef4444;
+  --color-danger-dark: #dc2626;
+  --color-warning: #f59e0b;
+  --color-warning-dark: #d97706;
+
+  /* Theme Colors */
+  --color-background: #ffffff;
+  --color-text: #000000;
+  --color-border: #e5e7eb;
+  --color-shadow: rgba(0, 0, 0, 0.1);
+  --color-overlay: rgba(255, 255, 255, 0.9);
+  
+  /* Gradient Colors */
+  --gradient-primary: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  --gradient-secondary: linear-gradient(135deg, var(--color-secondary), var(--color-secondary-dark));
+  --gradient-brand: linear-gradient(45deg, #2196F3, #00BCD4);
+}
+
+[data-theme="dark"] {
+  --color-background: #1a1a1a;
+  --color-text: #ffffff;
+  --color-border: #2d2d2d;
+  --color-shadow: rgba(0, 0, 0, 0.3);
+  --color-overlay: rgba(33, 37, 41, 0.95);
+  
+  /* Adjust colors for dark theme */
+  --color-primary: #818cf8;
+  --color-primary-dark: #6366f1;
+  --color-secondary: #94a3b8;
+  --color-secondary-dark: #64748b;
+} 

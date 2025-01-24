@@ -7,7 +7,13 @@ const Layout = ({ children }) => {
   const { theme } = useTheme();
   
   return (
-    <div className={`d-flex flex-column min-vh-100 ${theme === 'dark' ? 'bg-dark text-light' : 'bg-light text-dark'}`}>
+    <div 
+      className="d-flex flex-column min-vh-100"
+      style={{
+        backgroundColor: 'var(--color-background)',
+        color: 'var(--color-text)'
+      }}
+    >
       <Navbar />
       <main className="flex-grow-1">
         {children}
