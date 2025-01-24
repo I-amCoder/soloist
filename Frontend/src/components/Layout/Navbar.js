@@ -38,7 +38,9 @@ const Navbar = () => {
           ? scrolled ? 'rgba(33, 37, 41, 0.95)' : 'transparent'
           : scrolled ? 'rgba(255, 255, 255, 0.95)' : 'transparent',
         backdropFilter: scrolled ? 'blur(10px)' : 'none',
-        transition: 'all 0.3s ease-in-out'
+        transition: 'all 0.3s ease-in-out',
+        height: scrolled ? '80px' : '90px',
+        padding: scrolled ? '0' : '0'
       }}
     >
       <div className="container">
