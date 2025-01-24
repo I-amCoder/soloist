@@ -1,142 +1,240 @@
 .executive-section {
-    padding: 4rem 0;
-    background-color: var(--color-background);
+  padding: 2rem;
+  padding-bottom: 80px;
+  background-color: var(--color-background);
+  position: relative;
+}
+
+.executive-section.loading,
+.executive-section.error {
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+
+.executive-card {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.executive-image {
+  position: relative;
+  width: 450px;
+  height: 450px;
+  margin-right: 2rem;
+}
+
+.executive-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-wrapper {
+  position: relative;
+  flex: 1;
+  padding-left: 3rem;
+  border-left: 4px solid var(--color-primary);
+}
+
+.executive-name {
+  font-size: 5rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--color-text);
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.executive-role {
+  font-size: 2.5rem;
+  color: var(--color-secondary);
+  margin: 0.5rem 0 1rem 0;
+  font-style: italic;
+}
+
+.executive-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  color: var(--color-text);
+}
+
+.department {
+  font-size: 1.2rem;
+  color: var(--color-secondary);
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 500px;
+  margin-top: 1rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.social-links a {
+  color: var(--color-text);
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--color-primary);
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  color: var(--color-text);
+  cursor: pointer;
+  z-index: 10;
+  padding: 1rem;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.carousel-arrow:hover {
+  opacity: 1;
+}
+
+.carousel-arrow.prev {
+  left: -80px;
+}
+
+.carousel-arrow.next {
+  right: -80px;
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+  justify-content: center;
+  width: fit-content;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--color-text);
+  opacity: 0.3;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+  border: none;
+}
+
+.indicator.active {
+  opacity: 1;
+  background-color: var(--color-primary);
+  transform: scale(1.2);
+}
+
+@media (max-width: 1300px) {
+  .carousel-arrow.prev {
+    left: 1rem;
   }
-  
-  .executive-section.loading,
-  .executive-section.error {
-    min-height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+  .carousel-arrow.next {
+    right: 1rem;
   }
-  
-  .carousel-container {
-    position: relative;
-    max-width: 900px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-  }
-  
+}
+
+@media (max-width: 768px) {
   .executive-card {
-    display: flex;
-    gap: 2rem;
-    background: var(--color-background);
-    border: 1px solid var(--color-border);
-    border-radius: 12px;
+    flex-direction: column;
+    text-align: center;
     padding: 2rem;
-    box-shadow: 0 4px 15px var(--color-shadow);
   }
-  
+
   .executive-image {
-    flex-shrink: 0;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    overflow: hidden;
+    width: 300px;
+    height: 300px;
+    margin-right: 0;
+    margin-bottom: 2rem;
   }
-  
-  .executive-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+
+  .content-wrapper {
+    padding-left: 0;
+    border-left: none;
+    border-top: 4px solid var(--color-primary);
+    padding-top: 2rem;
   }
-  
-  .executive-info {
-    flex: 1;
+
+  .executive-name {
+    font-size: 3rem;
   }
-  
-  .executive-info h3 {
-    margin: 0;
-    color: var(--color-text);
-    font-size: 1.5rem;
+
+  .executive-role {
+    font-size: 1.8rem;
   }
-  
-  .executive-info h4 {
-    color: var(--color-primary);
-    margin: 0.5rem 0;
-  }
-  
-  .department {
-    color: var(--color-secondary);
-    margin-bottom: 1rem;
-  }
-  
+
   .description {
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
+    max-width: 100%;
   }
-  
+
   .social-links {
-    display: flex;
-    gap: 1rem;
-  }
-  
-  .social-links a {
-    color: var(--color-secondary);
-    font-size: 1.5rem;
-    transition: color 0.3s ease;
-  }
-  
-  .social-links a:hover {
-    color: var(--color-primary);
-  }
-  
-  .carousel-arrow {
-    background: none;
-    border: none;
-    font-size: 2rem;
-    color: var(--color-text);
-    cursor: pointer;
-    padding: 0.5rem;
-    transition: opacity 0.3s ease;
-  }
-  
-  .carousel-arrow:hover {
-    opacity: 0.7;
-  }
-  
-  .carousel-indicators {
-    display: flex;
     justify-content: center;
-    gap: 0.5rem;
-    margin-top: 2rem;
+  }
+
+  .carousel-container {
+    padding-bottom: 40px;
+  }
+
+  .executive-section {
+    padding-bottom: 60px;
+  }
+
+  .carousel-indicators {
+    bottom: 10px;
+    gap: 0.8rem;
   }
   
   .indicator {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    border: none;
-    background: var(--color-secondary);
-    opacity: 0.5;
-    cursor: pointer;
-    padding: 0;
-    transition: opacity 0.3s ease;
+    width: 8px;
+    height: 8px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .executive-name {
+    font-size: 4rem;
   }
   
-  .indicator.active {
-    opacity: 1;
-    background: var(--color-primary);
+  .executive-role {
+    font-size: 2rem;
   }
-  
-  @media (max-width: 768px) {
-    .executive-card {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 1.5rem;
-    }
-  
-    .executive-image {
-      width: 150px;
-      height: 150px;
-    }
-  
-    .carousel-container {
-      padding: 0 1rem;
-    }
-  }
+}

@@ -13,6 +13,28 @@ const ExecutiveMembers = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  // Add auto-slide functionality
+  useEffect(() => {
+    const autoSlideTimer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % executives.length);
+    }, 5000); // Change slide every 5 seconds
+
+    // Cleanup timer on component unmount
+    return () => clearInterval(autoSlideTimer);
+  }, [executives.length]);
+
+  // Pause auto-slide on hover
+  const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    if (!isHovered && executives.length > 0) {
+      const timer = setInterval(() => {
+        setCurrentIndex((prev) => (prev + 1) % executives.length);
+      }, 5000);
+      return () => clearInterval(timer);
+    }
+  }, [isHovered, executives.length]);
+
   useEffect(() => {
     const fetchExecutives = async () => {
       try {
@@ -75,7 +97,11 @@ const ExecutiveMembers = () => {
           Meet Our Executive Team
         </motion.h2>
 
-        <div className="carousel-container">
+        <div 
+          className="carousel-container"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
           <button 
             className="carousel-arrow prev"
             onClick={handlePrev}

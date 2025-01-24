@@ -1,6 +1,8 @@
 .hero-container {
   position: relative;
-  background-color: var(--bs-body-bg);
+  min-height: 100vh;
+  background-color: transparent;
+  overflow: hidden;
 }
 
 .text-gradient {
@@ -40,4 +42,15 @@
   .text-gradient {
     font-size: 2.5rem;
   }
+}
+
+/* Add these new styles */
+.react-parallax {
+  height: 100vh;
+}
+
+.react-parallax-bgimage {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 } 

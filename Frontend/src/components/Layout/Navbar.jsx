@@ -12,6 +12,7 @@ const Navbar = () => {
 
   // Handle navbar background on scroll
   useEffect(() => {
+    console.log(NAV_ITEMS);
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
@@ -59,7 +60,7 @@ const Navbar = () => {
 
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav mx-auto">
-            {NAV_ITEMS.filter(item => item.path !== '/').map((item) => (
+            {NAV_ITEMS.map((item) => (
               <motion.li 
                 key={item.path} 
                 className="nav-item"
