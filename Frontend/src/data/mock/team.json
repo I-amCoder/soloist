@@ -2,12 +2,12 @@
   "executives": [
     {
       "id": 1,
-      "name": "Sarah Chen",
+      "name": "Anas Raza",
       "role": "President",
       "image": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e",
       "description": "Leading ACM's vision for innovative hackathons and tech events. Passionate about creating inclusive tech communities and fostering innovation through collaborative events.",
       "department": "Computer Science",
-      "year": "Senior",
+      "year": "Final Year",
       "socialLinks": {
         "linkedin": "https://linkedin.com/in/sarahchen",
         "github": "https://github.com/sarahchen",
@@ -16,41 +16,41 @@
     },
     {
       "id": 2,
-      "name": "Michael Rodriguez",
-      "role": "Technical Director",
-      "image": "https://images.unsplash.com/photo-1556157382-97eda2f9e2bf",
-      "description": "Overseeing technical aspects of our hackathon platforms. Expert in cloud infrastructure and DevOps practices with a focus on scalable solutions.",
-      "department": "Software Engineering",
-      "year": "Junior",
+      "name": "Farwa Toor",
+      "role": "VP Internal",
+      "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2",
+      "description": "Managing internal operations and coordinating with different departments to ensure smooth execution of ACM initiatives.",
+      "department": "Computer Science",
+      "year": "Final Year",
       "socialLinks": {
-        "linkedin": "https://linkedin.com/in/mrodriguez",
-        "github": "https://github.com/mrodriguez"
+        "linkedin": "https://linkedin.com/in/farwatoor",
+        "github": "https://github.com/farwatoor"
       }
     },
     {
       "id": 3,
-      "name": "Aisha Patel",
-      "role": "Event Coordinator",
+      "name": "Nauman Asif",
+      "role": "General Secretary",
       "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2",
-      "description": "Organizing and managing our signature hackathon events. Specializes in creating engaging tech events that bring together students and industry professionals.",
-      "department": "Business Analytics",
-      "year": "Senior",
+      "description": "Overseeing administrative tasks and maintaining effective communication between members and the executive council.",
+      "department": "Computer Science",
+      "year": "Final Year",
       "socialLinks": {
-        "linkedin": "https://linkedin.com/in/aishapatel",
-        "twitter": "https://twitter.com/aishapatel"
+        "linkedin": "https://linkedin.com/in/naumanasif",
+        "github": "https://github.com/naumanasif"
       }
     },
     {
       "id": 4,
-      "name": "David Kim",
-      "role": "Marketing Lead",
+      "name": "Nadir Hussain",
+      "role": "Treasurer",
       "image": "https://images.unsplash.com/photo-1542190891-2093d38760f2",
-      "description": "Driving outreach and community engagement for our hackathon initiatives. Focused on building partnerships and expanding our reach in the tech community.",
-      "department": "Marketing",
-      "year": "Junior",
+      "description": "Managing financial operations and ensuring efficient allocation of resources for ACM activities and events.",
+      "department": "Computer Science",
+      "year": "Final Year",
       "socialLinks": {
-        "linkedin": "https://linkedin.com/in/davidkim",
-        "twitter": "https://twitter.com/davidkim"
+        "linkedin": "https://linkedin.com/in/nadirhussain",
+        "github": "https://github.com/nadirhussain"
       }
     }
   ]

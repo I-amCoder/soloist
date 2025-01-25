@@ -10,25 +10,32 @@ const AboutUs = () => {
 
   const executiveMembers = [
     {
-      name: "John Doe",
-      role: "Chapter Chair",
-      email: "chair@acmchapter.org",
-      linkedin: "https://linkedin.com/in/johndoe",
-      github: "https://github.com/johndoe"
+      name: "Anas Raza",
+      role: "President",
+      email: "president.acm@example.com",
+      linkedin: "https://linkedin.com/in/anasraza",
+      github: "https://github.com/anasraza"
     },
     {
-      name: "Jane Smith",
-      role: "Vice Chair",
-      email: "vicechair@acmchapter.org",
-      linkedin: "https://linkedin.com/in/janesmith",
-      github: "https://github.com/janesmith"
+      name: "Farwa Toor",
+      role: "VP Internal",
+      email: "vpinternal.acm@example.com",
+      linkedin: "https://linkedin.com/in/farwatoor",
+      github: "https://github.com/farwatoor"
     },
     {
-      name: "Mike Johnson",
-      role: "Secretary",
-      email: "secretary@acmchapter.org",
-      linkedin: "https://linkedin.com/in/mikejohnson",
-      github: "https://github.com/mikejohnson"
+      name: "Nauman Asif",
+      role: "General Secretary",
+      email: "secretary.acm@example.com",
+      linkedin: "https://linkedin.com/in/naumanasif",
+      github: "https://github.com/naumanasif"
+    },
+    {
+      name: "Nadir Hussain",
+      role: "Treasurer",
+      email: "treasurer.acm@example.com",
+      linkedin: "https://linkedin.com/in/nadirhussain",
+      github: "https://github.com/nadirhussain"
     }
   ];
 

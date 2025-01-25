@@ -13,8 +13,8 @@ const Team = () => {
         transition={{ duration: 0.5 }}
       >
         <div className="container">
-          <h1>Our Team</h1>
-          <p>Meet the dedicated individuals behind our hackathon community</p>
+          <h1>ACM Executive Council</h1>
+          <p>Meet the dedicated leaders driving our ACM Student Chapter forward</p>
         </div>
       </motion.div>
       <ExecutiveMembers />
