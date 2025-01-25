@@ -2,6 +2,8 @@ using AcmHackathonBackend.Models;
 using AcmHackathonBackend.Repositories.Executives;
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
+using AutoMapper;
+using AcmHackathonBackend.Models.ResponseModels;
 
 namespace AcmHackathonBackend.Controllers
 {
@@ -10,43 +12,23 @@ namespace AcmHackathonBackend.Controllers
     public class ExecutivesController : ControllerBase
     {
         private readonly IExecutiveRepository _executiveRepository;
-        private readonly JsonSerializerOptions _jsonOptions;
+        private readonly IMapper _mapper;
 
-        public ExecutivesController(IExecutiveRepository executiveRepository)
+        public ExecutivesController(IExecutiveRepository executiveRepository, IMapper mapper)
         {
             _executiveRepository = executiveRepository;
-            _jsonOptions = new JsonSerializerOptions
-            {
-                ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles,
-                WriteIndented = true
-            };
+            _mapper = mapper;
         }
 
         // GET: api/executives
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<object>>> GetAllExecutives()
+        public async Task<ActionResult<IEnumerable<ExecutiveResponseModel>>> GetAllExecutives()
         {
             try
             {
                 var executives = await _executiveRepository.GetAllAsync();
-                var executivesList = executives.Select(e => new
-                {
-                    e.Id,
-                    e.Name,
-                    e.Role,
-                    e.Image,
-                    e.Description,
-                    e.Department,
-                    e.Year,
-                    SocialLinks = e.SocialLinks == null ? null : new
-                    {
-                        e.SocialLinks.LinkedIn,
-                        e.SocialLinks.Github,
-                        e.SocialLinks.Twitter
-                    }
-                });
-
-                return Ok(executivesList);
+                var response = _mapper.Map<IEnumerable<ExecutiveResponseModel>>(executives);
+                return Ok(response);
             }
             catch (Exception ex)
             {
@@ -56,7 +38,7 @@ namespace AcmHackathonBackend.Controllers
 
         // GET: api/executives/{id}
         [HttpGet("{id}")]
-        public async Task<ActionResult<object>> GetExecutiveById(int id)
+        public async Task<ActionResult<ExecutiveResponseModel>> GetExecutiveById(int id)
         {
             try
             {
@@ -66,24 +48,8 @@ namespace AcmHackathonBackend.Controllers
                     return NotFound(new { message = "Executive not found" });
                 }
 
-                var executiveDto = new
-                {
-                    executive.Id,
-                    executive.Name,
-                    executive.Role,
-                    executive.Image,
-                    executive.Description,
-                    executive.Department,
-                    executive.Year,
-                    SocialLinks = executive.SocialLinks == null ? null : new
-                    {
-                        executive.SocialLinks.LinkedIn,
-                        executive.SocialLinks.Github,
-                        executive.SocialLinks.Twitter
-                    }
-                };
-
-                return Ok(executiveDto);
+                var response = _mapper.Map<ExecutiveResponseModel>(executive);
+                return Ok(response);
             }
             catch (Exception ex)
             {
@@ -93,29 +59,13 @@ namespace AcmHackathonBackend.Controllers
 
         // GET: api/executives/role/{role}
         [HttpGet("role/{role}")]
-        public async Task<ActionResult<IEnumerable<object>>> GetExecutivesByRole(string role)
+        public async Task<ActionResult<IEnumerable<ExecutiveResponseModel>>> GetExecutivesByRole(string role)
         {
             try
             {
                 var executives = await _executiveRepository.GetExecutivesByRoleAsync(role);
-                var executivesList = executives.Select(e => new
-                {
-                    e.Id,
-                    e.Name,
-                    e.Role,
-                    e.Image,
-                    e.Description,
-                    e.Department,
-                    e.Year,
-                    SocialLinks = e.SocialLinks == null ? null : new
-                    {
-                        e.SocialLinks.LinkedIn,
-                        e.SocialLinks.Github,
-                        e.SocialLinks.Twitter
-                    }
-                });
-
-                return Ok(executivesList);
+                var response = _mapper.Map<IEnumerable<ExecutiveResponseModel>>(executives);
+                return Ok(response);
             }
             catch (Exception ex)
             {

@@ -14,6 +14,7 @@ const Events = () => {
       try {
         setIsLoading(true);
         const data = await eventService.getAllEvents();
+        console.log(data);
         setEvents(data);
       } catch (error) {
         console.error('Error fetching events:', error);

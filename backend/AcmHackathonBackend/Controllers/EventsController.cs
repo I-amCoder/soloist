@@ -1,6 +1,8 @@
 using AcmHackathonBackend.Models;
 using AcmHackathonBackend.Repositories.Events;
 using Microsoft.AspNetCore.Mvc;
+using AutoMapper;
+using AcmHackathonBackend.Models.ResponseModels;
 
 namespace AcmHackathonBackend.Controllers
 {
@@ -9,21 +11,30 @@ namespace AcmHackathonBackend.Controllers
     public class EventsController : ControllerBase
     {
         private readonly IEventRepository _eventRepository;
+        private readonly IMapper _mapper;
 
-        public EventsController(IEventRepository eventRepository)
+        public EventsController(IEventRepository eventRepository, IMapper mapper)
         {
             _eventRepository = eventRepository;
+            _mapper = mapper;
         }
 
         // GET: api/events
         [HttpGet]
-        public async Task<ActionResult<object>> GetAllEvents()
+        public async Task<ActionResult<EventsResponseModel>> GetAllEvents()
         {
             try
             {
                 var upcoming = await _eventRepository.GetUpcomingEventsAsync();
                 var past = await _eventRepository.GetPastEventsAsync();
-                return Ok(new { upcoming, past });
+                
+                var response = new EventsResponseModel
+                {
+                    Upcoming = _mapper.Map<List<EventResponseModel>>(upcoming),
+                    Past = _mapper.Map<List<EventResponseModel>>(past)
+                };
+                
+                return Ok(response);
             }
             catch (Exception ex)
             {
@@ -33,12 +44,13 @@ namespace AcmHackathonBackend.Controllers
 
         // GET: api/events/upcoming
         [HttpGet("upcoming")]
-        public async Task<ActionResult<IEnumerable<Event>>> GetUpcomingEvents()
+        public async Task<ActionResult<IEnumerable<EventResponseModel>>> GetUpcomingEvents()
         {
             try
             {
                 var events = await _eventRepository.GetUpcomingEventsAsync();
-                return Ok(events);
+                var response = _mapper.Map<IEnumerable<EventResponseModel>>(events);
+                return Ok(response);
             }
             catch (Exception ex)
             {
@@ -48,12 +60,13 @@ namespace AcmHackathonBackend.Controllers
 
         // GET: api/events/past
         [HttpGet("past")]
-        public async Task<ActionResult<IEnumerable<Event>>> GetPastEvents()
+        public async Task<ActionResult<IEnumerable<EventResponseModel>>> GetPastEvents()
         {
             try
             {
                 var events = await _eventRepository.GetPastEventsAsync();
-                return Ok(events);
+                var response = _mapper.Map<IEnumerable<EventResponseModel>>(events);
+                return Ok(response);
             }
             catch (Exception ex)
             {
@@ -63,7 +76,7 @@ namespace AcmHackathonBackend.Controllers
 
         // GET: api/events/{slug}
         [HttpGet("{slug}")]
-        public async Task<ActionResult<Event>> GetEventBySlug(string slug)
+        public async Task<ActionResult<EventResponseModel>> GetEventBySlug(string slug)
         {
             try
             {
@@ -72,7 +85,8 @@ namespace AcmHackathonBackend.Controllers
                 {
                     return NotFound(new { message = "Event not found" });
                 }
-                return Ok(@event);
+                var response = _mapper.Map<EventResponseModel>(@event);
+                return Ok(response);
             }
             catch (Exception ex)
             {
@@ -82,14 +96,15 @@ namespace AcmHackathonBackend.Controllers
 
         // GET: api/events/range
         [HttpGet("range")]
-        public async Task<ActionResult<IEnumerable<Event>>> GetEventsByDateRange(
+        public async Task<ActionResult<IEnumerable<EventResponseModel>>> GetEventsByDateRange(
             [FromQuery] DateTime startDate,
             [FromQuery] DateTime endDate)
         {
             try
             {
                 var events = await _eventRepository.GetEventsByDateRangeAsync(startDate, endDate);
-                return Ok(events);
+                var response = _mapper.Map<IEnumerable<EventResponseModel>>(events);
+                return Ok(response);
             }
             catch (Exception ex)
             {

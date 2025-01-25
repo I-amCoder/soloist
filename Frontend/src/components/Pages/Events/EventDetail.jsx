@@ -33,7 +33,7 @@ const EventDetail = () => {
   if (isLoading) return <LoadingSpinner />;
   if (!event) return null;
 
-  const isPastEvent = new Date(event.date) < new Date();
+  const isPastEvent = new Date(event.startDate) < new Date();
 
   const renderUpcomingEvent = () => (
     <>
@@ -231,7 +231,7 @@ const EventDetail = () => {
             transition={{ delay: 0.2 }}
           >
             <div className="event-date">
-              {format(new Date(event.date), 'MMMM dd, yyyy')}
+              {format(new Date(event.startDate), 'MMMM dd, yyyy')}
             </div>
             <h1>{event.title}</h1>
             <p>{event.fullDescription}</p>
@@ -259,4 +259,4 @@ const EventDetail = () => {
   );
 };
 
-export default EventDetail; 
+export default EventDetail;

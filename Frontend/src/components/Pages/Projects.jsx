@@ -13,6 +13,8 @@ const Projects = () => {
       try {
         setIsLoading(true);
         const data = await projectService.getAllProjects();
+        console.log(data);
+        
         setProjects(data);
       } catch (error) {
         console.error('Error fetching projects:', error);
@@ -44,7 +46,7 @@ const Projects = () => {
         <section className="featured-projects">
           <h2>Featured Projects</h2>
           <div className="projects-grid">
-            {projects.featured.map((project) => (
+            {projects.map((project) => (
               <ProjectCard key={project.id} project={project} featured={true} />
             ))}
           </div>
@@ -53,7 +55,7 @@ const Projects = () => {
         <section className="recent-projects">
           <h2>Recent Projects</h2>
           <div className="projects-grid">
-            {projects.recent.map((project) => (
+            {projects.map((project) => (
               <ProjectCard key={project.id} project={project} />
             ))}
           </div>
