@@ -42,6 +42,7 @@
   background: var(--gradient-primary);
   color: white;
   border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 [data-theme="dark"] .tab-button {
@@ -53,11 +54,18 @@
   color: white;
 }
 
+[data-theme="dark"] .tab-button.active {
+  box-shadow: 0 2px 12px rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 .events-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  padding: 1rem;
+  padding: 2rem;
+  justify-items: center;
+  align-items: center;
 }
 
 .events-loading,

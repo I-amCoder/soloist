@@ -4,6 +4,7 @@ using AcmHackathonBackend.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AcmHackathonBackend.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250125032345_AddedDbTables")]
+    partial class AddedDbTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -71,32 +74,6 @@ namespace AcmHackathonBackend.Migrations
                         .IsUnique();
 
                     b.ToTable("Events");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date = new DateTime(2024, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "Create cutting-edge AI solutions",
-                            FullDescription = "Join us for an exciting 48-hour hackathon focused on artificial intelligence and machine learning innovations. This event brings together developers, data scientists, and AI enthusiasts to create groundbreaking solutions.",
-                            Image = "https://images.unsplash.com/photo-1540575467063-178a50c2df87",
-                            IsUpcoming = true,
-                            Slug = "ai-innovation-hackathon-2024",
-                            Title = "AI Innovation Hackathon"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date = new DateTime(2024, 2, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "Blockchain and DApp development",
-                            FullDescription = "A groundbreaking hackathon focused on Web3 technologies and blockchain development. Participants created innovative decentralized applications and smart contracts.",
-                            Image = "https://images.unsplash.com/photo-1591115765373-5207764f72e7",
-                            IsUpcoming = false,
-                            Slug = "web3-development-challenge-2024",
-                            Title = "Web3 Development Challenge"
-                        });
                 });
 
             modelBuilder.Entity("AcmHackathonBackend.Models.EventPrize", b =>
@@ -131,32 +108,6 @@ namespace AcmHackathonBackend.Migrations
                     b.HasIndex("EventId");
 
                     b.ToTable("EventPrizes");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EventId = 1,
-                            Place = "1st Place",
-                            Reward = "$5000"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EventId = 1,
-                            Place = "2nd Place",
-                            Reward = "$3000"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EventId = 1,
-                            Place = "3rd Place",
-                            Reward = "$1000"
-                        });
                 });
 
             modelBuilder.Entity("AcmHackathonBackend.Models.EventRule", b =>
@@ -186,36 +137,6 @@ namespace AcmHackathonBackend.Migrations
                     b.HasIndex("EventId");
 
                     b.ToTable("EventRules");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "Teams must consist of 2-4 members",
-                            EventId = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "All code must be written during the hackathon",
-                            EventId = 1
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "Use of open-source libraries is allowed",
-                            EventId = 1
-                        },
-                        new
-                        {
-                            Id = 4,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "Projects must incorporate AI/ML components",
-                            EventId = 1
-                        });
                 });
 
             modelBuilder.Entity("AcmHackathonBackend.Models.EventSchedule", b =>
@@ -245,22 +166,6 @@ namespace AcmHackathonBackend.Migrations
                     b.HasIndex("EventId");
 
                     b.ToTable("EventSchedules");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Day = "Day 1",
-                            EventId = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Day = "Day 2",
-                            EventId = 1
-                        });
                 });
 
             modelBuilder.Entity("AcmHackathonBackend.Models.EventSponsor", b =>
@@ -297,26 +202,6 @@ namespace AcmHackathonBackend.Migrations
                     b.HasIndex("EventId");
 
                     b.ToTable("EventSponsors");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EventId = 1,
-                            Logo = "https://example.com/techcorp-logo.png",
-                            Name = "TechCorp",
-                            Website = "https://techcorp.com"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EventId = 1,
-                            Logo = "https://example.com/ai-solutions-logo.png",
-                            Name = "AI Solutions",
-                            Website = "https://aisolutions.com"
-                        });
                 });
 
             modelBuilder.Entity("AcmHackathonBackend.Models.EventVenue", b =>
@@ -355,17 +240,6 @@ namespace AcmHackathonBackend.Migrations
                         .IsUnique();
 
                     b.ToTable("EventVenues");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Address = "123 Innovation Street, Silicon Valley, CA",
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EventId = 1,
-                            MapLink = "https://maps.google.com/",
-                            Name = "Tech Innovation Center"
-                        });
                 });
 
             modelBuilder.Entity("AcmHackathonBackend.Models.Executive", b =>
@@ -420,7 +294,7 @@ namespace AcmHackathonBackend.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2025, 1, 25, 3, 23, 45, 24, DateTimeKind.Utc).AddTicks(8611),
                             Department = "Computer Science",
                             Description = "Leading ACM's vision for innovative hackathons and tech events. Passionate about creating inclusive tech communities and fostering innovation through collaborative events.",
                             Image = "https://media-hosting.imagekit.io//9e88ccb922834e77/president.png",
@@ -431,34 +305,12 @@ namespace AcmHackathonBackend.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2025, 1, 25, 3, 23, 45, 24, DateTimeKind.Utc).AddTicks(8616),
                             Department = "Computer Science",
                             Description = "Managing internal operations and coordinating with different departments to ensure smooth execution of ACM initiatives.",
                             Image = "https://media-hosting.imagekit.io//4d6ac4d0ee2642d5/vp-internal.png",
                             Name = "Farwa Toor",
                             Role = "VP Internal",
-                            Year = "Final Year"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Department = "Computer Science",
-                            Description = "Overseeing administrative tasks and maintaining effective communication between members and the executive council.",
-                            Image = "https://media-hosting.imagekit.io//44e64f2b582f4dc0/secatary.png",
-                            Name = "Nauman Asif",
-                            Role = "General Secretary",
-                            Year = "Final Year"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Department = "Computer Science",
-                            Description = "Managing financial operations and ensuring efficient allocation of resources for ACM activities and events.",
-                            Image = "https://media-hosting.imagekit.io//37bc8bb9aff24dfe/treasurer.png",
-                            Name = "Nadir Hussain",
-                            Role = "Treasurer",
                             Year = "Final Year"
                         });
                 });
@@ -500,7 +352,7 @@ namespace AcmHackathonBackend.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2025, 1, 25, 3, 23, 45, 24, DateTimeKind.Utc).AddTicks(9852),
                             ExecutiveId = 1,
                             Github = "https://github.com/sarahchen",
                             LinkedIn = "https://linkedin.com/in/sarahchen",
@@ -509,26 +361,10 @@ namespace AcmHackathonBackend.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2025, 1, 25, 3, 23, 45, 24, DateTimeKind.Utc).AddTicks(9854),
                             ExecutiveId = 2,
                             Github = "https://github.com/farwatoor",
                             LinkedIn = "https://linkedin.com/in/farwatoor"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExecutiveId = 3,
-                            Github = "https://github.com/naumanasif",
-                            LinkedIn = "https://linkedin.com/in/naumanasif"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExecutiveId = 4,
-                            Github = "https://github.com/nadirhussain",
-                            LinkedIn = "https://linkedin.com/in/nadirhussain"
                         });
                 });
 
@@ -559,36 +395,6 @@ namespace AcmHackathonBackend.Migrations
                     b.HasIndex("EventPrizeId");
 
                     b.ToTable("PrizeBenefits");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "Direct interview with tech partners",
-                            EventPrizeId = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "1-year AI cloud credits",
-                            EventPrizeId = 1
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "6-month AI cloud credits",
-                            EventPrizeId = 2
-                        },
-                        new
-                        {
-                            Id = 4,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "3-month AI cloud credits",
-                            EventPrizeId = 3
-                        });
                 });
 
             modelBuilder.Entity("AcmHackathonBackend.Models.Project", b =>
@@ -652,7 +458,7 @@ namespace AcmHackathonBackend.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2025, 1, 25, 3, 23, 45, 23, DateTimeKind.Utc).AddTicks(9326),
                             DemoLink = "https://demo.healthtech.com",
                             Description = "An intelligent healthcare assistant that uses machine learning to provide personalized medical advice and symptom analysis.",
                             GithubLink = "https://github.com/healthtech/ai-assistant",
@@ -666,7 +472,7 @@ namespace AcmHackathonBackend.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2025, 1, 25, 3, 23, 45, 23, DateTimeKind.Utc).AddTicks(9517),
                             DemoLink = "https://demo.smartcity.io",
                             Description = "A comprehensive platform for monitoring and optimizing city resources using IoT sensors and blockchain technology.",
                             GithubLink = "https://github.com/ecotech/smart-city",
@@ -680,7 +486,7 @@ namespace AcmHackathonBackend.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2025, 1, 25, 3, 23, 45, 23, DateTimeKind.Utc).AddTicks(9519),
                             DemoLink = "https://demo.educhain.io",
                             Description = "A blockchain-based platform for verifiable credentials and peer-to-peer learning.",
                             GithubLink = "https://github.com/educhain/platform",
@@ -725,56 +531,56 @@ namespace AcmHackathonBackend.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2025, 1, 25, 3, 23, 45, 24, DateTimeKind.Utc).AddTicks(6487),
                             Description = "Real-time symptom analysis",
                             ProjectId = 1
                         },
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2025, 1, 25, 3, 23, 45, 24, DateTimeKind.Utc).AddTicks(6489),
                             Description = "Medical history tracking",
                             ProjectId = 1
                         },
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2025, 1, 25, 3, 23, 45, 24, DateTimeKind.Utc).AddTicks(6491),
                             Description = "Emergency alert system",
                             ProjectId = 1
                         },
                         new
                         {
                             Id = 4,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2025, 1, 25, 3, 23, 45, 24, DateTimeKind.Utc).AddTicks(6492),
                             Description = "Integration with healthcare providers",
                             ProjectId = 1
                         },
                         new
                         {
                             Id = 5,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2025, 1, 25, 3, 23, 45, 24, DateTimeKind.Utc).AddTicks(6493),
                             Description = "Real-time resource monitoring",
                             ProjectId = 2
                         },
                         new
                         {
                             Id = 6,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2025, 1, 25, 3, 23, 45, 24, DateTimeKind.Utc).AddTicks(6494),
                             Description = "Predictive maintenance",
                             ProjectId = 2
                         },
                         new
                         {
                             Id = 7,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2025, 1, 25, 3, 23, 45, 24, DateTimeKind.Utc).AddTicks(6495),
                             Description = "Citizen engagement portal",
                             ProjectId = 2
                         },
                         new
                         {
                             Id = 8,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2025, 1, 25, 3, 23, 45, 24, DateTimeKind.Utc).AddTicks(6495),
                             Description = "Blockchain-based voting system",
                             ProjectId = 2
                         });
@@ -812,56 +618,56 @@ namespace AcmHackathonBackend.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2025, 1, 25, 3, 23, 45, 24, DateTimeKind.Utc).AddTicks(5139),
                             Name = "Python",
                             ProjectId = 1
                         },
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2025, 1, 25, 3, 23, 45, 24, DateTimeKind.Utc).AddTicks(5143),
                             Name = "TensorFlow",
                             ProjectId = 1
                         },
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2025, 1, 25, 3, 23, 45, 24, DateTimeKind.Utc).AddTicks(5144),
                             Name = "React",
                             ProjectId = 1
                         },
                         new
                         {
                             Id = 4,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2025, 1, 25, 3, 23, 45, 24, DateTimeKind.Utc).AddTicks(5145),
                             Name = "Node.js",
                             ProjectId = 1
                         },
                         new
                         {
                             Id = 5,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2025, 1, 25, 3, 23, 45, 24, DateTimeKind.Utc).AddTicks(5146),
                             Name = "Solidity",
                             ProjectId = 2
                         },
                         new
                         {
                             Id = 6,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2025, 1, 25, 3, 23, 45, 24, DateTimeKind.Utc).AddTicks(5146),
                             Name = "React",
                             ProjectId = 2
                         },
                         new
                         {
                             Id = 7,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2025, 1, 25, 3, 23, 45, 24, DateTimeKind.Utc).AddTicks(5147),
                             Name = "AWS",
                             ProjectId = 2
                         },
                         new
                         {
                             Id = 8,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2025, 1, 25, 3, 23, 45, 24, DateTimeKind.Utc).AddTicks(5148),
                             Name = "IoT",
                             ProjectId = 2
                         });
@@ -899,56 +705,6 @@ namespace AcmHackathonBackend.Migrations
                     b.HasIndex("EventScheduleId");
 
                     b.ToTable("ScheduleActivities");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Activity = "Opening Ceremony",
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EventScheduleId = 1,
-                            Time = "09:00 AM"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Activity = "Team Formation",
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EventScheduleId = 1,
-                            Time = "10:00 AM"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Activity = "Hacking Begins",
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EventScheduleId = 1,
-                            Time = "11:00 AM"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Activity = "Project Submissions",
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EventScheduleId = 2,
-                            Time = "02:00 PM"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Activity = "Presentations",
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EventScheduleId = 2,
-                            Time = "04:00 PM"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Activity = "Awards Ceremony",
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EventScheduleId = 2,
-                            Time = "06:00 PM"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
