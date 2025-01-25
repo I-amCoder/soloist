@@ -72,8 +72,8 @@
 
 .events-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0rem;
   padding: 2rem;
   justify-items: center;
   align-items: center;

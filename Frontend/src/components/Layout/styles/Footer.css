@@ -1,6 +1,6 @@
 .footer {
-  background: var(--color-background-dark);
-  color: var(--color-text-light);
+  background: var(--gradient-primary);
+  color: white;
   padding: 4rem 0 2rem;
   position: relative;
 }
