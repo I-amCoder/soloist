@@ -42,7 +42,7 @@
   font-weight: var(--font-weight-medium);
   color: white;
   line-height: var(--line-height-normal);
-  max-width: 800px;
+  /* max-width: 800px; */
   margin: 0 auto;
 }
 

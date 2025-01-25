@@ -10,6 +10,7 @@ const Navbar = () => {
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const isHomePage = location.pathname === '/';
+  const [isToggled, setIsToggled] = useState(false);
 
   // Handle navbar background on scroll
   useEffect(() => {
@@ -19,6 +20,10 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleToggle = () => {
+    setIsToggled(!isToggled);
+  };
 
   return (
     <motion.nav
@@ -57,13 +62,12 @@ const Navbar = () => {
         <button 
           className="navbar-toggler border-0" 
           type="button" 
-          data-bs-toggle="collapse" 
-          data-bs-target="#navbarNav"
+          onClick={handleToggle}
         >
-          <span className="navbar-toggler-icon"></span> 
+          <span className="custom-toggler-icon">☰</span> 
         </button>
 
-        <div className="collapse navbar-collapse" id="navbarNav">
+        <div className={`collapse navbar-collapse ${isToggled ? 'show' : ''}`} id="navbarNav">
           <ul className="navbar-nav mx-auto">
             {NAV_ITEMS.map((item) => (
               <motion.li 
@@ -74,6 +78,12 @@ const Navbar = () => {
                 <Link 
                   className={`nav-link px-3 ${location.pathname === item.path ? 'active' : ''}`}
                   to={item.path}
+                  style={{
+                    transition: 'color 0.3s ease',
+                    color: location.pathname === item.path ? 'currentColor' : 'inherit',
+                  }}
+                  onMouseEnter={(e) => e.target.style.color = theme === 'dark' ? 'lightblue' : 'blue'}
+                  onMouseLeave={(e) => e.target.style.color = location.pathname === item.path ? 'currentColor' : 'inherit'}
                 >
                   {item.label}
                 </Link>
