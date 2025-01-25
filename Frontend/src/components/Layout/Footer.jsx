@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="row">
           <div className="col-md-6">
             <h5>ACM Chapter</h5>
-            <p className="mb-0">Advancing Computing as a Science & Profession</p>
+            <p className="mb-0">Association for Computing Machinery</p>
           </div>
           <div className="col-md-6 text-md-end">
             <p className="mb-0">© 2024 ACM. All rights reserved.</p>

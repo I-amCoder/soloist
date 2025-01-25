@@ -4,6 +4,7 @@ import Layout from './components/Layout/Layout';
 import LoadingSpinner from './components/UI/LoadingSpinner';
 import ErrorBoundary from './components/Pages/Error/ErrorBoundary';
 import NotFound from './components/Pages/Error/NotFound';
+import AboutUs from './components/Pages/About/AboutUs';
 
 // Lazy load components
 const Home = React.lazy(() => import('./components/Pages/Home'));
@@ -24,6 +25,7 @@ function App() {
               <Route path="/events" element={<Events />} />
               <Route path="/events/:slug" element={<EventDetail />} />
               <Route path="/projects" element={<Projects />} />
+              <Route path="/about" element={<AboutUs />} />
               <Route path="/404" element={<NotFound />} />
               <Route path="*" element={<Navigate to="/404" replace />} />
             </Routes>

@@ -1,7 +1,7 @@
 export const HOME_DATA = {
   hero: {
-    title: "Discover Next-Gen Hackathons",
-    subtitle: "Join the future of innovation with cutting-edge hackathons and tech events",
+    title: "Discover ACM Next-Gen Hackathons",
+    subtitle: "Empowering students through collaborative coding, innovation, and technological advancement",
     cta: {
       primary: {
         text: "Explore Events",

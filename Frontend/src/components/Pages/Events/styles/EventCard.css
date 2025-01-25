@@ -1,10 +1,15 @@
 .event-card {
   background: var(--color-card);
-  border: 1px solid var(--color-border);
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 20px var(--color-shadow);
   transition: transform 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  max-width: 350px;
+  margin: 0 auto;
+  border: 1px solid var(--color-border);
 }
 
 .event-card:hover {
@@ -30,16 +35,21 @@
 
 .event-date {
   position: absolute;
-  bottom: 0;
-  left: 0;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem 1rem;
   background: var(--gradient-primary);
   color: white;
-  padding: 0.5rem 1rem;
-  border-top-right-radius: 8px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
 }
 
 .event-content {
   padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .event-content h3 {
@@ -49,19 +59,22 @@
 }
 
 .event-content p {
-  margin: 0 0 1.5rem 0;
   color: var(--color-secondary);
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
   line-height: 1.6;
 }
 
 .event-button {
   display: inline-block;
   padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 500;
+  transition: all 0.3s ease;
   background: var(--gradient-primary);
   color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  transition: all 0.3s ease;
 }
 
 .event-button.secondary {
@@ -70,7 +83,8 @@
 
 .event-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px var(--color-shadow);
+  color: white;
+  opacity: 0.9;
 }
 
 [data-theme="dark"] .event-card {
