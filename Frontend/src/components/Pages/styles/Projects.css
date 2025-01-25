@@ -2,7 +2,7 @@
   background-color: var(--color-background);
   color: var(--color-text);
   min-height: 100vh;
-  padding: 2rem;
+
 }
 
 .projects-header {
@@ -40,12 +40,26 @@
 
 .featured-projects h2,
 .recent-projects h2 {
-  font-size: var(--font-size-h2);
+  font-size: 3.5rem;
   font-family: var(--font-primary);
   font-weight: var(--font-weight-semibold);
   margin-bottom: 2rem;
   color: var(--color-text);
   line-height: var(--line-height-tight);
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.featured-projects h2:hover,
+.recent-projects h2:hover {
+  transform: scale(1.05);
 }
 
 .projects-grid {

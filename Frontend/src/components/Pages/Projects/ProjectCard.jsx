@@ -29,19 +29,23 @@ const ProjectCard = ({ project, featured }) => {
         </div>
 
         <div className="project-technologies">
-          {project.technologies.map((tech, index) => (
-            <span key={index} className="tech-tag">
-              {tech}
-            </span>
-          ))}
+          <h4>Technologies:</h4>
+          <ul>
+            {project.technologies.map((tech) => (
+              <li key={tech.id}>{tech.name}</li>
+            ))}
+          </ul>
         </div>
 
         {featured && project.features && (
-          <ul className="project-features">
-            {project.features.map((feature, index) => (
-              <li key={index}>{feature}</li>
-            ))}
-          </ul>
+          <div className="project-features">
+            <h4>Features:</h4>
+            <ul>
+              {project.features.map((feature) => (
+                <li key={feature.id}>{feature.description}</li>
+              ))}
+            </ul>
+          </div>
         )}
 
         <div className="project-links">

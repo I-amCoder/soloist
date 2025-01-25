@@ -1,23 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import EventCard from './Events/EventCard';
-import LoadingSpinner from '../common/LoadingSpinner';
-import { eventService } from '../../services/api/eventService';
+import { motion, AnimatePresence } from 'framer-motion';
+import EventCard from './EventCard';
+import LoadingSpinner from '../../UI/LoadingSpinner';
+import { eventService } from '../../../services/api/eventService';
 import './styles/Events.css';
 
 const Events = () => {
   const [events, setEvents] = useState({ upcoming: [], past: [] });
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [activeTab, setActiveTab] = useState('upcoming');
 
   useEffect(() => {
     const fetchEvents = async () => {
       try {
         setIsLoading(true);
         const data = await eventService.getAllEvents();
-        console.log(data);
         setEvents(data);
-      } catch (error) {
-        console.error('Error fetching events:', error);
+      } catch (err) {
+        setError('Failed to load events. Please try again later.');
+        console.error('Error fetching events:', err);
       } finally {
         setIsLoading(false);
       }
@@ -27,7 +29,15 @@ const Events = () => {
   }, []);
 
   if (isLoading) {
-    return <LoadingSpinner />;
+    return (
+      <div className="events-loading">
+        <LoadingSpinner />
+      </div>
+    );
+  }
+
+  if (error) {
+    return <div className="events-error">{error}</div>;
   }
 
   return (
@@ -38,44 +48,44 @@ const Events = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <div className="container">
-          <h1>ACM Events & Hackathons</h1>
-          <p>Join our community of innovators and participate in exciting tech events</p>
-        </div>
+        <h1>Hackathon Events</h1>
+        <p>Explore our exciting events and activities</p>
       </motion.div>
 
       <div className="events-content">
-        {events.upcoming.length > 0 && (
-          <section className="events-section">
-            <h2>Upcoming Events</h2>
-            <div className="events-grid">
-              {events.upcoming.slice(0, 4).map((event, index) => (
-                <EventCard 
-                  key={event.id} 
-                  event={event} 
-                  index={index}
-                  type="upcoming"
-                />
-              ))}
-            </div>
-          </section>
-        )}
+        <div className="events-tabs">
+          <button
+            className={`tab-button ${activeTab === 'upcoming' ? 'active' : ''}`}
+            onClick={() => setActiveTab('upcoming')}
+          >
+            Upcoming Events
+          </button>
+          <button
+            className={`tab-button ${activeTab === 'past' ? 'active' : ''}`}
+            onClick={() => setActiveTab('past')}
+          >
+            Past Events
+          </button>
+        </div>
 
-        {events.past.length > 0 && (
-          <section className="events-section">
-            <h2>Past Events</h2>
-            <div className="events-grid">
-              {events.past.slice(0, 4).map((event, index) => (
-                <EventCard 
-                  key={event.id} 
-                  event={event} 
-                  index={index}
-                  type="past"
-                />
-              ))}
-            </div>
-          </section>
-        )}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeTab}
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -20 }}
+            className="events-grid"
+          >
+            {events[activeTab].map((event, index) => (
+              <EventCard
+                key={event.id}
+                event={event}
+                index={index}
+                type={activeTab}
+              />
+            ))}
+          </motion.div>
+        </AnimatePresence>
       </div>
     </div>
   );

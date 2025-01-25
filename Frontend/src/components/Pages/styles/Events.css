@@ -2,21 +2,20 @@
   min-height: 100vh;
   background-color: var(--color-background);
   color: var(--color-text);
-  padding: 4rem 2rem;
+  padding: 2rem;
 }
 
 .events-header {
   background: var(--gradient-primary);
-  padding: 4rem 0;
+  padding: var(--header-padding);
   text-align: center;
-  color: white;
+  color: var(--header-text-color);
+  transition: background 0.3s ease;
 }
 
 .events-header h1 {
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  color: white;
+  font-size: var(--header-font-size);
+  color: var(--header-text-color);
 }
 
 .events-header p {

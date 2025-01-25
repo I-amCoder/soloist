@@ -42,27 +42,30 @@ const Events = () => {
 
   return (
     <div className="events-container">
+
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
         className="events-header"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
       >
-        <h1 className="events-title">Hackathon Events</h1>
-        <div className="events-tabs">
-          <button
-            className={`tab-button ${activeTab === 'upcoming' ? 'active' : ''}`}
-            onClick={() => setActiveTab('upcoming')}
-          >
-            Upcoming Events
-          </button>
-          <button
-            className={`tab-button ${activeTab === 'past' ? 'active' : ''}`}
-            onClick={() => setActiveTab('past')}
-          >
-            Past Events
-          </button>
-        </div>
+        <h1>Hackathon Events</h1>
+        <p>Explore our exciting events and activities</p>
       </motion.div>
+      <div className="events-tabs">
+        <button
+          className={`tab-button ${activeTab === 'upcoming' ? 'active' : ''}`}
+          onClick={() => setActiveTab('upcoming')}
+        >
+          Upcoming Events
+        </button>
+        <button
+          className={`tab-button ${activeTab === 'past' ? 'active' : ''}`}
+          onClick={() => setActiveTab('past')}
+        >
+          Past Events
+        </button>
+      </div>
 
       <AnimatePresence mode="wait">
         <motion.div
