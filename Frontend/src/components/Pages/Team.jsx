@@ -14,7 +14,7 @@ const Team = () => {
       >
         <div className="container">
           <h1>ACM Executive Council</h1>
-          <p>Meet the dedicated leaders driving our ACM Student Chapter forward</p>
+          <p>Meet the dedicated leaders driving our ACM Student Chapter forward.</p>
         </div>
       </motion.div>
       <ExecutiveMembers />
