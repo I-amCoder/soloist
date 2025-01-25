@@ -22,6 +22,10 @@
   --gradient-primary: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
   --gradient-secondary: linear-gradient(135deg, var(--color-secondary), var(--color-secondary-dark));
   --gradient-brand: linear-gradient(45deg, #2196F3, #00BCD4);
+
+  /* Add these new variables */
+  --color-card: #ffffff;
+  --color-card-dark: #2d2d2d;
 }
 
 [data-theme="dark"] {
@@ -36,4 +40,9 @@
   --color-primary-dark: #6366f1;
   --color-secondary: #94a3b8;
   --color-secondary-dark: #64748b;
+
+  /* Add dark theme specific variables */
+  --color-card: #2d2d2d;
+  --color-shadow: rgba(0, 0, 0, 0.3);
+  --color-border: #404040;
 } 

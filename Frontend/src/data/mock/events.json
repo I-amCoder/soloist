@@ -1,0 +1,233 @@
+{
+  "upcoming": [
+    {
+      "id": 1,
+      "slug": "ai-innovation-hackathon-2024",
+      "title": "AI Innovation Hackathon",
+      "date": "2024-04-15",
+      "description": "Create cutting-edge AI solutions",
+      "image": "https://images.unsplash.com/photo-1540575467063-178a50c2df87",
+      "registrationLink": "/events/register/1",
+      "fullDescription": "Join us for an exciting 48-hour hackathon focused on artificial intelligence and machine learning innovations. This event brings together developers, data scientists, and AI enthusiasts to create groundbreaking solutions.",
+      "schedule": [
+        {
+          "day": "Day 1",
+          "events": [
+            { "time": "09:00 AM", "activity": "Opening Ceremony" },
+            { "time": "10:00 AM", "activity": "Team Formation" },
+            { "time": "11:00 AM", "activity": "Hacking Begins" }
+          ]
+        },
+        {
+          "day": "Day 2",
+          "events": [
+            { "time": "02:00 PM", "activity": "Project Submissions" },
+            { "time": "04:00 PM", "activity": "Presentations" },
+            { "time": "06:00 PM", "activity": "Awards Ceremony" }
+          ]
+        }
+      ],
+      "rules": [
+        "Teams must consist of 2-4 members",
+        "All code must be written during the hackathon",
+        "Use of open-source libraries is allowed",
+        "Projects must incorporate AI/ML components"
+      ],
+      "prizes": [
+        {
+          "place": "1st Place",
+          "reward": "$5000",
+          "benefits": ["Direct interview with tech partners", "1-year AI cloud credits"]
+        },
+        {
+          "place": "2nd Place",
+          "reward": "$3000",
+          "benefits": ["6-month AI cloud credits"]
+        },
+        {
+          "place": "3rd Place",
+          "reward": "$1000",
+          "benefits": ["3-month AI cloud credits"]
+        }
+      ],
+      "venue": {
+        "name": "Tech Innovation Center",
+        "address": "123 Innovation Street, Silicon Valley, CA",
+        "mapLink": "https://maps.google.com/"
+      },
+      "sponsors": [
+        {
+          "name": "TechCorp",
+          "logo": "https://example.com/techcorp-logo.png",
+          "website": "https://techcorp.com"
+        },
+        {
+          "name": "AI Solutions",
+          "logo": "https://example.com/ai-solutions-logo.png",
+          "website": "https://aisolutions.com"
+        }
+      ]
+    },
+    {
+      "id": 102,
+      "slug": "ai-innovation-summit-2024",
+      "title": "AI Innovation Summit",
+      "date": "2024-05-15",
+      "description": "Exploring the future of AI and machine learning",
+      "image": "https://images.unsplash.com/photo-1517430816045-df4b7de1d1c0",
+      "projectsLink": "/events/102/projects",
+      "fullDescription": "A summit dedicated to the latest advancements in AI and machine learning. Participants showcased cutting-edge projects and research.",
+      "results": {
+        "winners": [
+          {
+            "place": "1st Place",
+            "team": "AI Innovators",
+            "project": "Autonomous Drone Navigation",
+            "description": "AI-powered drones for efficient navigation"
+          },
+          {
+            "place": "2nd Place",
+            "team": "Machine Learning Masters",
+            "project": "Predictive Analytics Platform",
+            "description": "Platform for advanced predictive analytics"
+          }
+        ],
+        "statistics": {
+          "participants": 200,
+          "projects": 60,
+          "countries": 15
+        }
+      },
+      "highlights": [
+        {
+          "title": "Panel Discussion",
+          "speaker": "Dr. Alice Johnson",
+          "description": "Ethics in AI"
+        },
+        {
+          "title": "Workshop",
+          "speaker": "Dr. Robert Lee",
+          "description": "Deep Learning Techniques"
+        }
+      ],
+      "gallery": [
+        {
+          "url": "https://images.unsplash.com/photo-1556740749-887f6717d7e4",
+          "caption": "Keynote Speech"
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1517430816045-df4b7de1d1c0",
+          "caption": "AI Project Showcase"
+        }
+      ]
+    },
+    {
+      "id": 103,
+      "slug": "cybersecurity-conference-2024",
+      "title": "Cybersecurity Conference",
+      "date": "2024-08-10",
+      "description": "Protecting the digital world",
+      "image": "https://images.unsplash.com/photo-1510511459019-5dda7724fd87",
+      "projectsLink": "/events/103/projects",
+      "fullDescription": "A conference focused on the latest trends and challenges in cybersecurity. Experts shared insights on protecting digital assets and infrastructure.",
+      "results": {
+        "winners": [
+          {
+            "place": "1st Place",
+            "team": "Cyber Defenders",
+            "project": "Advanced Threat Detection",
+            "description": "AI-based threat detection system"
+          },
+          {
+            "place": "2nd Place",
+            "team": "Security Experts",
+            "project": "Secure Communication Platform",
+            "description": "Encrypted communication for businesses"
+          }
+        ],
+        "statistics": {
+          "participants": 180,
+          "projects": 50,
+          "countries": 10
+        }
+      },
+      "highlights": [
+        {
+          "title": "Keynote Speech",
+          "speaker": "Dr. Emily Clark",
+          "description": "Future of Cybersecurity"
+        },
+        {
+          "title": "Workshop",
+          "speaker": "Mr. John Smith",
+          "description": "Penetration Testing"
+        }
+      ],
+      "gallery": [
+        {
+          "url": "https://images.unsplash.com/photo-1526378722484-cc5c1e5e2519",
+          "caption": "Conference Hall"
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1535223289827-42f1e9919769",
+          "caption": "Networking Session"
+        }
+      ]
+    }
+  ],
+  "past": [
+    {
+      "id": 101,
+      "slug": "web3-development-challenge-2024",
+      "title": "Web3 Development Challenge",
+      "date": "2024-02-20",
+      "description": "Blockchain and DApp development",
+      "image": "https://images.unsplash.com/photo-1591115765373-5207764f72e7",
+      "projectsLink": "/events/101/projects",
+      "fullDescription": "A groundbreaking hackathon focused on Web3 technologies and blockchain development. Participants created innovative decentralized applications and smart contracts.",
+      "results": {
+        "winners": [
+          {
+            "place": "1st Place",
+            "team": "BlockChain Warriors",
+            "project": "DeFi Lending Platform",
+            "description": "Revolutionary peer-to-peer lending platform"
+          },
+          {
+            "place": "2nd Place",
+            "team": "Web3 Pioneers",
+            "project": "NFT Marketplace",
+            "description": "Sustainable NFT trading platform"
+          }
+        ],
+        "statistics": {
+          "participants": 150,
+          "projects": 45,
+          "countries": 12
+        }
+      },
+      "highlights": [
+        {
+          "title": "Keynote Speech",
+          "speaker": "John Doe",
+          "description": "Future of Web3"
+        },
+        {
+          "title": "Workshop",
+          "speaker": "Jane Smith",
+          "description": "Smart Contract Security"
+        }
+      ],
+      "gallery": [
+        {
+          "url": "https://images.unsplash.com/photo-1540575467063-178a50c2df87",
+          "caption": "Opening Ceremony"
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1591115765373-5207764f72e7",
+          "caption": "Winning Team"
+        }
+      ]
+    }
+  ]
+} 

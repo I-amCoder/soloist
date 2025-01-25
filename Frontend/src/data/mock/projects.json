@@ -1,0 +1,66 @@
+{
+  "featured": [
+    {
+      "id": 1,
+      "title": "AI-Powered Healthcare Assistant",
+      "description": "An intelligent healthcare assistant that uses machine learning to provide personalized medical advice and symptom analysis.",
+      "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d",
+      "team": "HealthTech Innovators",
+      "hackathon": "AI Innovation Hackathon 2024",
+      "technologies": ["Python", "TensorFlow", "React", "Node.js"],
+      "status": "Winner",
+      "demoLink": "https://demo.healthtech.com",
+      "githubLink": "https://github.com/healthtech/ai-assistant",
+      "features": [
+        "Real-time symptom analysis",
+        "Medical history tracking",
+        "Emergency alert system",
+        "Integration with healthcare providers"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Sustainable Smart City Platform",
+      "description": "A comprehensive platform for monitoring and optimizing city resources using IoT sensors and blockchain technology.",
+      "image": "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b",
+      "team": "EcoTech Solutions",
+      "hackathon": "Web3 Development Challenge 2024",
+      "technologies": ["Solidity", "React", "AWS", "IoT"],
+      "status": "Runner Up",
+      "demoLink": "https://demo.smartcity.io",
+      "githubLink": "https://github.com/ecotech/smart-city",
+      "features": [
+        "Real-time resource monitoring",
+        "Predictive maintenance",
+        "Citizen engagement portal",
+        "Blockchain-based voting system"
+      ]
+    }
+  ],
+  "recent": [
+    {
+      "id": 3,
+      "title": "Decentralized Education Platform",
+      "description": "A blockchain-based platform for verifiable credentials and peer-to-peer learning.",
+      "image": "https://images.unsplash.com/photo-1501504905252-473c47e087f8",
+      "team": "EduChain",
+      "hackathon": "Web3 Development Challenge 2024",
+      "technologies": ["Ethereum", "React", "Node.js"],
+      "status": "Completed",
+      "demoLink": "https://demo.educhain.io",
+      "githubLink": "https://github.com/educhain/platform"
+    },
+    {
+      "id": 4,
+      "title": "AR Navigation Assistant",
+      "description": "Augmented reality navigation system for indoor and outdoor guidance.",
+      "image": "https://images.unsplash.com/photo-1527168027773-0cc890c4f42e",
+      "team": "AR Pioneers",
+      "hackathon": "AI Innovation Hackathon 2024",
+      "technologies": ["Unity", "ARKit", "CoreML"],
+      "status": "In Development",
+      "demoLink": "https://demo.arnavigation.com",
+      "githubLink": "https://github.com/arpioneers/navigation"
+    }
+  ]
+} 

@@ -1,3 +1,5 @@
+import { IMAGES } from "../images";
+
 export const EVENTS_DATA = {
   upcoming: [
     {

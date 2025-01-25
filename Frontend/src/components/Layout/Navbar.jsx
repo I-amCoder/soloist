@@ -9,6 +9,7 @@ const Navbar = () => {
   const { theme } = useTheme();
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
+  const isHomePage = location.pathname === '/';
 
   // Handle navbar background on scroll
   useEffect(() => {
@@ -25,15 +26,20 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`
-        navbar navbar-expand-lg fixed-top
+        navbar navbar-expand-lg
+        ${isHomePage ? 'fixed-top' : 'sticky-top'}
         ${scrolled ? 'navbar-scrolled' : ''}
         ${theme === 'dark' ? 'navbar-dark' : 'navbar-light'}
       `}
       style={{
-        background: theme === 'dark' 
-          ? scrolled ? 'rgba(33, 37, 41, 0.95)' : 'transparent'
-          : scrolled ? 'rgba(255, 255, 255, 0.95)' : 'transparent',
-        backdropFilter: scrolled ? 'blur(10px)' : 'none',
+        background: isHomePage 
+          ? theme === 'dark'
+            ? scrolled ? 'rgba(33, 37, 41, 0.95)' : 'transparent'
+            : scrolled ? 'rgba(255, 255, 255, 0.95)' : 'transparent'
+          : theme === 'dark'
+            ? 'rgba(33, 37, 41, 1)'
+            : 'rgba(255, 255, 255, 1)',
+        backdropFilter: scrolled || !isHomePage ? 'blur(10px)' : 'none',
         transition: 'all 0.3s ease-in-out',
         height: scrolled ? '80px' : '90px',
         padding: scrolled ? '0' : '0'

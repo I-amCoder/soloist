@@ -8,6 +8,9 @@ import NotFound from './components/Pages/Error/NotFound';
 // Lazy load components
 const Home = React.lazy(() => import('./components/Pages/Home'));
 const Team = React.lazy(() => import('./components/Pages/Team'));
+const Events = React.lazy(() => import('./components/Pages/Events/Events'));
+const EventDetail = React.lazy(() => import('./components/Pages/Events/EventDetail'));
+const Projects = React.lazy(() => import('./components/Pages/Projects'));
 
 function App() {
   return (
@@ -18,6 +21,9 @@ function App() {
             <Routes>
               <Route exact path="/" element={<Home />} />
               <Route path="/team" element={<Team />} />
+              <Route path="/events" element={<Events />} />
+              <Route path="/events/:slug" element={<EventDetail />} />
+              <Route path="/projects" element={<Projects />} />
               <Route path="/404" element={<NotFound />} />
               <Route path="*" element={<Navigate to="/404" replace />} />
             </Routes>
