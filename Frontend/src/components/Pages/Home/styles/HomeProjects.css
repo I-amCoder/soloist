@@ -34,4 +34,26 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 0rem;
   justify-items: center;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .projects-showcase {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem 0rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-showcase {
+    grid-template-columns: 1fr;
+  }
+
+  .section-header h2 {
+    font-size: 2.5rem;
+  }
+
+  .section-header p {
+    font-size: 1rem;
+  }
 } 

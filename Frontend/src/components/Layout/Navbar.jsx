@@ -83,11 +83,6 @@ const Navbar = () => {
           
           <div className="d-flex align-items-center gap-3">
             <ThemeToggle />
-            <motion.div whileHover={{ scale: 1.05 }}>
-              <Link to="/login" className="btn btn-primary btn-sm">
-                Sign In
-              </Link>
-            </motion.div>
           </div>
         </div>
       </div>

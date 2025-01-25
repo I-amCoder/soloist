@@ -6,10 +6,10 @@ import Chatbot from '../UI/Chatbot';
 const AppLayout = ({ children }) => {
   return (
     <>
-      <Navbar />
-      <main>{children}</main>
-      <Footer />
       <Chatbot />
+      {/* <Navbar />
+      <main>{children}</main>
+      <Footer /> */}
     </>
   );
 };

@@ -5,6 +5,7 @@ import LoadingSpinner from './components/UI/LoadingSpinner';
 import ErrorBoundary from './components/Pages/Error/ErrorBoundary';
 import NotFound from './components/Pages/Error/NotFound';
 import AboutUs from './components/Pages/About/AboutUs';
+import Chatbot from './components/UI/Chatbot';
 
 // Lazy load components
 const Home = React.lazy(() => import('./components/Pages/Home'));
@@ -31,6 +32,7 @@ function App() {
             </Routes>
           </Suspense>
         </Layout>
+        <Chatbot />
       </Router>
     </ErrorBoundary>
   );
