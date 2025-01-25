@@ -1,4 +1,5 @@
-import eventsData from '../../data/mock/events.json';
+import api from '../../utils/api';
+import { GET_ALL_EVENTS, GET_EVENT_BY_SLUG, GET_PAST_EVENTS, GET_UPCOMING_EVENTS } from '../../constants/apiRoutes';
 
 // Simulate API delay
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
@@ -6,35 +7,45 @@ const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 export const eventService = {
   // Get all events (both upcoming and past)
   async getAllEvents() {
-    await delay(800);
-    return {
-      upcoming: eventsData.upcoming,
-      past: eventsData.past
-    };
+    try {
+      const response = await api.get(GET_ALL_EVENTS);
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching all events:', error);
+      throw error;
+    }
   },
 
   // Get upcoming events
   async getUpcomingEvents() {
-    await delay(600);
-    return eventsData.upcoming;
+    try {
+      const response = await api.get(GET_UPCOMING_EVENTS);
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching upcoming events:', error);
+      throw error;
+    }
   },
 
   // Get past events
   async getPastEvents() {
-    await delay(600);
-    return eventsData.past;
+    try {
+      const response = await api.get(GET_PAST_EVENTS);
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching past events:', error);
+      throw error;
+    }
   },
 
   // Get event by slug
   async getEventBySlug(slug) {
-    await delay(600);
-    const allEvents = [...eventsData.upcoming, ...eventsData.past];
-    const event = allEvents.find(event => event.slug === slug);
-    
-    if (!event) {
-      throw new Error('Event not found');
+    try {
+      const response = await api.get(GET_EVENT_BY_SLUG(slug));
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching event:', error);
+      throw error;
     }
-    
-    return event;
   }
 }; 

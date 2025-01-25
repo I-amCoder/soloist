@@ -5,13 +5,14 @@ import { format } from 'date-fns';
 import './styles/EventCard.css';
 
 const EventCard = ({ event, index, type }) => {
-  const formattedDate = format(new Date(event.date), 'MMM dd, yyyy');
+  const formattedDate = format(new Date(event.startDate), 'MMM dd, yyyy');
 
   return (
     <motion.div
       className="event-card"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
+      whileHover={{ scale: 1.05, boxShadow: "0 8px 30px rgba(0,0,0,0.12)" }}
       transition={{ delay: index * 0.1 }}
     >
       <div className="event-image">

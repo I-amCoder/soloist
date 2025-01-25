@@ -13,7 +13,6 @@ const Navbar = () => {
 
   // Handle navbar background on scroll
   useEffect(() => {
-    console.log(NAV_ITEMS);
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };

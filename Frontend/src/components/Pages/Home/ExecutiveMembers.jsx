@@ -40,6 +40,8 @@ const ExecutiveMembers = () => {
       try {
         setIsLoading(true);
         const data = await teamService.getAllExecutives();
+        console.log(data);
+        
         setExecutives(data);
         setError(null);
       } catch (err) {

@@ -16,6 +16,7 @@ const HomeEvents = () => {
       try {
         setIsLoading(true);
         const data = await eventService.getUpcomingEvents();
+        console.log(data);
         setEvents(data.slice(0, 3)); // Show only first 3 upcoming events
       } catch (error) {
         console.error('Error fetching events:', error);
@@ -61,7 +62,7 @@ const HomeEvents = () => {
                   <img src={event.image} alt={event.title} />
                   <div className="event-overlay">
                     <div className="event-date-badge">
-                      {format(new Date(event.date), 'MMM dd, yyyy')}
+                      {format(new Date(event.startDate), 'MMM dd, yyyy')}
                     </div>
                     <div className="event-content-overlay">
                       <h3>{event.title}</h3>

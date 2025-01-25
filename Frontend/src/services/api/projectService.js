@@ -1,4 +1,13 @@
-import projectsData from '../../data/mock/projects.json';
+import api from '../../utils/api';
+import { 
+  GET_ALL_PROJECTS, 
+  GET_FEATURED_PROJECTS, 
+  GET_PROJECT_BY_ID, 
+  GET_PROJECTS_BY_HACKATHON, 
+  GET_PROJECTS_BY_STATUS, 
+  GET_PROJECTS_BY_TECHNOLOGY, 
+  GET_RECENT_PROJECTS 
+} from '../../constants/apiRoutes';
 
 // Simulate API delay like other services
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
@@ -6,64 +15,78 @@ const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 export const projectService = {
   // Get all projects
   async getAllProjects() {
-    await delay(800);
-    return {
-      featured: projectsData.featured,
-      recent: projectsData.recent
-    };
+    try {
+      const response = await api.get(GET_ALL_PROJECTS);
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching all projects:', error);
+      throw error;
+    }
   },
 
   // Get featured projects
   async getFeaturedProjects() {
-    await delay(600);
-    return projectsData.featured;
+    try {
+      const response = await api.get(GET_FEATURED_PROJECTS);
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching featured projects:', error);
+      throw error;
+    }
   },
 
   // Get recent projects
   async getRecentProjects() {
-    await delay(600);
-    return projectsData.recent;
+    try {
+      const response = await api.get(GET_RECENT_PROJECTS);
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching recent projects:', error);
+      throw error;
+    }
   },
 
   // Get project by ID
   async getProjectById(id) {
-    await delay(500);
-    const allProjects = [...projectsData.featured, ...projectsData.recent];
-    const project = allProjects.find(project => project.id === id);
-    
-    if (!project) {
-      throw new Error('Project not found');
+    try {
+      const response = await api.get(GET_PROJECT_BY_ID(id));
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching project:', error);
+      throw error;
     }
-    
-    return project;
   },
 
   // Get projects by technology
   async getProjectsByTechnology(technology) {
-    await delay(700);
-    const allProjects = [...projectsData.featured, ...projectsData.recent];
-    return allProjects.filter(project => 
-      project.technologies.some(tech => 
-        tech.toLowerCase().includes(technology.toLowerCase())
-      )
-    );
+    try {
+      const response = await api.get(GET_PROJECTS_BY_TECHNOLOGY(technology));
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching projects by technology:', error);
+      throw error;
+    }
   },
 
   // Get projects by hackathon
-  async getProjectsByHackathon(hackathonName) {
-    await delay(700);
-    const allProjects = [...projectsData.featured, ...projectsData.recent];
-    return allProjects.filter(project => 
-      project.hackathon.toLowerCase().includes(hackathonName.toLowerCase())
-    );
+  async getProjectsByHackathon(hackathon) {
+    try {
+      const response = await api.get(GET_PROJECTS_BY_HACKATHON(hackathon));
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching projects by hackathon:', error);
+      throw error;
+    }
   },
 
   // Get projects by status
   async getProjectsByStatus(status) {
-    await delay(600);
-    const allProjects = [...projectsData.featured, ...projectsData.recent];
-    return allProjects.filter(project => 
-      project.status.toLowerCase() === status.toLowerCase()
-    );
+    try {
+      const response = await api.get(GET_PROJECTS_BY_STATUS(status));
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching projects by status:', error);
+      throw error;
+    }
   }
 }; 
