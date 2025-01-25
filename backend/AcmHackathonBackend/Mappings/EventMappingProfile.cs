@@ -34,13 +34,19 @@ namespace AcmHackathonBackend.Mappings
 
             CreateMap<Executive, ExecutiveResponseModel>()
                 .ForMember(dest => dest.SocialLinks, opt => opt.MapFrom(src => src.SocialLinks));
-            
+
 
             CreateMap<ExecutiveSocialLinks, ExecutiveSocialLinksResponseModel>();
+
+            CreateMap<Project, ProjectResponseModel>()
+           .ForMember(dest => dest.Technologies, opt => opt.MapFrom(src => src.Technologies))
+           .ForMember(dest => dest.Features, opt => opt.MapFrom(src => src.Features));
+
+            CreateMap<ProjectTechnology, ProjectTechnologyResponseModel>();
+            CreateMap<ProjectFeature, ProjectFeatureResponseModel>();
         }
         private int ParseOrdinal(string place)
         {
-            // Extract the numeric part from the ordinal string
             var numberPart = new string(place.TakeWhile(char.IsDigit).ToArray());
             return int.TryParse(numberPart, out var rank) ? rank : throw new FormatException($"Invalid place format: {place}");
         }

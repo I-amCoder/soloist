@@ -4,6 +4,7 @@ using AcmHackathonBackend.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AcmHackathonBackend.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250125110359_data-update2")]
+    partial class dataupdate2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -447,7 +450,7 @@ namespace AcmHackathonBackend.Migrations
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Department = "Computer Science",
                             Description = "Leading ACM's vision for innovative hackathons and tech events. Passionate about creating inclusive tech communities and fostering innovation through collaborative events.",
-                            Image = "https://plus.unsplash.com/premium_photo-1664536392896-cd1743f9c02c?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGVyc29ufGVufDB8fDB8fHww",
+                            Image = "https://media-hosting.imagekit.io//9e88ccb922834e77/president.png",
                             Name = "Anas Raza",
                             Role = "President",
                             Year = "Final Year"
@@ -458,7 +461,7 @@ namespace AcmHackathonBackend.Migrations
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Department = "Computer Science",
                             Description = "Managing internal operations and coordinating with different departments to ensure smooth execution of ACM initiatives.",
-                            Image = "https://plus.unsplash.com/premium_photo-1690407617542-2f210cf20d7e?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D",
+                            Image = "https://media-hosting.imagekit.io//4d6ac4d0ee2642d5/vp-internal.png",
                             Name = "Farwa Toor",
                             Role = "VP Internal",
                             Year = "Final Year"
@@ -469,7 +472,7 @@ namespace AcmHackathonBackend.Migrations
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Department = "Computer Science",
                             Description = "Overseeing administrative tasks and maintaining effective communication between members and the executive council.",
-                            Image = "https://plus.unsplash.com/premium_photo-1689539137236-b68e436248de?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D",
+                            Image = "https://media-hosting.imagekit.io//44e64f2b582f4dc0/secatary.png",
                             Name = "Nauman Asif",
                             Role = "General Secretary",
                             Year = "Final Year"
@@ -480,7 +483,7 @@ namespace AcmHackathonBackend.Migrations
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Department = "Computer Science",
                             Description = "Managing financial operations and ensuring efficient allocation of resources for ACM activities and events.",
-                            Image = "https://images.unsplash.com/photo-1521566652839-697aa473761a?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D",
+                            Image = "https://media-hosting.imagekit.io//37bc8bb9aff24dfe/treasurer.png",
                             Name = "Nadir Hussain",
                             Role = "Treasurer",
                             Year = "Final Year"
@@ -526,9 +529,9 @@ namespace AcmHackathonBackend.Migrations
                             Id = 1,
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ExecutiveId = 1,
-                            Github = "https://github.com/anasraza",
-                            LinkedIn = "https://linkedin.com/in/anasraza",
-                            Twitter = "https://twitter.com/anasraza"
+                            Github = "https://github.com/sarahchen",
+                            LinkedIn = "https://linkedin.com/in/sarahchen",
+                            Twitter = "https://twitter.com/sarahchen"
                         },
                         new
                         {

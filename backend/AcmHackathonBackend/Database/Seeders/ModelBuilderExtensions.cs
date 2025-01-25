@@ -67,7 +67,11 @@ namespace AcmHackathonBackend.Database.Seeders
                 new ProjectTechnology { Id = 5, ProjectId = 2, Name = "Solidity", CreatedAt = _seedTime },
                 new ProjectTechnology { Id = 6, ProjectId = 2, Name = "React", CreatedAt = _seedTime },
                 new ProjectTechnology { Id = 7, ProjectId = 2, Name = "AWS", CreatedAt = _seedTime },
-                new ProjectTechnology { Id = 8, ProjectId = 2, Name = "IoT", CreatedAt = _seedTime }
+                new ProjectTechnology { Id = 8, ProjectId = 2, Name = "IoT", CreatedAt = _seedTime },
+                new ProjectTechnology { Id = 9, ProjectId = 3, Name = "Blockchain", CreatedAt = _seedTime },
+                new ProjectTechnology { Id = 10, ProjectId = 3, Name = "Ethereum", CreatedAt = _seedTime },
+                new ProjectTechnology { Id = 11, ProjectId = 3, Name = "IPFS", CreatedAt = _seedTime },
+                new ProjectTechnology { Id = 12, ProjectId = 3, Name = "Vue.js", CreatedAt = _seedTime }
             };
 
             modelBuilder.Entity<ProjectTechnology>().HasData(technologies);
@@ -82,7 +86,11 @@ namespace AcmHackathonBackend.Database.Seeders
                 new ProjectFeature { Id = 5, ProjectId = 2, Description = "Real-time resource monitoring", CreatedAt = _seedTime },
                 new ProjectFeature { Id = 6, ProjectId = 2, Description = "Predictive maintenance", CreatedAt = _seedTime },
                 new ProjectFeature { Id = 7, ProjectId = 2, Description = "Citizen engagement portal", CreatedAt = _seedTime },
-                new ProjectFeature { Id = 8, ProjectId = 2, Description = "Blockchain-based voting system", CreatedAt = _seedTime }
+                new ProjectFeature { Id = 8, ProjectId = 2, Description = "Blockchain-based voting system", CreatedAt = _seedTime },
+                new ProjectFeature { Id = 9, ProjectId = 3, Description = "Decentralized credential verification", CreatedAt = _seedTime },
+                new ProjectFeature { Id = 10, ProjectId = 3, Description = "Peer-to-peer learning modules", CreatedAt = _seedTime },
+                new ProjectFeature { Id = 11, ProjectId = 3, Description = "Smart contract-based course certification", CreatedAt = _seedTime },
+                new ProjectFeature { Id = 12, ProjectId = 3, Description = "Community-driven content creation", CreatedAt = _seedTime }
             };
 
             modelBuilder.Entity<ProjectFeature>().HasData(features);
@@ -95,7 +103,7 @@ namespace AcmHackathonBackend.Database.Seeders
                     Id = 1,
                     Name = "Anas Raza",
                     Role = "President",
-                    Image = "https://media-hosting.imagekit.io//9e88ccb922834e77/president.png",
+                    Image = "https://plus.unsplash.com/premium_photo-1664536392896-cd1743f9c02c?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGVyc29ufGVufDB8fDB8fHww",
                     Description = "Leading ACM's vision for innovative hackathons and tech events. Passionate about creating inclusive tech communities and fostering innovation through collaborative events.",
                     Department = "Computer Science",
                     Year = "Final Year",
@@ -106,7 +114,7 @@ namespace AcmHackathonBackend.Database.Seeders
                     Id = 2,
                     Name = "Farwa Toor",
                     Role = "VP Internal",
-                    Image = "https://media-hosting.imagekit.io//4d6ac4d0ee2642d5/vp-internal.png",
+                    Image = "https://plus.unsplash.com/premium_photo-1690407617542-2f210cf20d7e?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D",
                     Description = "Managing internal operations and coordinating with different departments to ensure smooth execution of ACM initiatives.",
                     Department = "Computer Science",
                     Year = "Final Year",
@@ -117,7 +125,7 @@ namespace AcmHackathonBackend.Database.Seeders
                     Id = 3,
                     Name = "Nauman Asif",
                     Role = "General Secretary",
-                    Image = "https://media-hosting.imagekit.io//44e64f2b582f4dc0/secatary.png",
+                    Image = "https://plus.unsplash.com/premium_photo-1689539137236-b68e436248de?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D",
                     Description = "Overseeing administrative tasks and maintaining effective communication between members and the executive council.",
                     Department = "Computer Science",
                     Year = "Final Year",
@@ -128,7 +136,7 @@ namespace AcmHackathonBackend.Database.Seeders
                     Id = 4,
                     Name = "Nadir Hussain",
                     Role = "Treasurer",
-                    Image = "https://media-hosting.imagekit.io//37bc8bb9aff24dfe/treasurer.png",
+                    Image = "https://images.unsplash.com/photo-1521566652839-697aa473761a?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D",
                     Description = "Managing financial operations and ensuring efficient allocation of resources for ACM activities and events.",
                     Department = "Computer Science",
                     Year = "Final Year",
@@ -145,9 +153,9 @@ namespace AcmHackathonBackend.Database.Seeders
                 {
                     Id = 1,
                     ExecutiveId = 1,
-                    LinkedIn = "https://linkedin.com/in/sarahchen",
-                    Github = "https://github.com/sarahchen",
-                    Twitter = "https://twitter.com/sarahchen",
+                    LinkedIn = "https://linkedin.com/in/anasraza",
+                    Github = "https://github.com/anasraza",
+                    Twitter = "https://twitter.com/anasraza",
                     CreatedAt = _seedTime
                 },
                 new ExecutiveSocialLinks
@@ -205,7 +213,34 @@ namespace AcmHackathonBackend.Database.Seeders
                 CreatedAt = _seedTime
             };
 
-            modelBuilder.Entity<Event>().HasData(aiHackathon, web3Challenge);
+            // New Events
+            var pastEvent = new Event
+            {
+                Id = 3,
+                Slug = "data-science-summit-2023",
+                Title = "Data Science Summit",
+                Date = new DateTime(2023, 11, 10),
+                Description = "Exploring the future of data science",
+                Image = "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d",
+                FullDescription = "A summit bringing together data scientists and industry leaders to discuss the latest trends and innovations in data science.",
+                IsUpcoming = false,
+                CreatedAt = _seedTime
+            };
+
+            var upcomingEvent = new Event
+            {
+                Id = 4,
+                Slug = "cybersecurity-conference-2024",
+                Title = "Cybersecurity Conference",
+                Date = new DateTime(2024, 6, 5),
+                Description = "Securing the digital future",
+                Image = "https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
+                FullDescription = "Join experts and enthusiasts in the field of cybersecurity to explore the latest challenges and solutions in protecting digital assets.",
+                IsUpcoming = true,
+                CreatedAt = _seedTime
+            };
+
+            modelBuilder.Entity<Event>().HasData(aiHackathon, web3Challenge, pastEvent, upcomingEvent);
 
             // Seed Event Schedule
             var schedules = new[]
