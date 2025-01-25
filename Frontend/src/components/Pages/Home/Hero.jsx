@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Parallax } from 'react-parallax';
+import { useNavigate } from 'react-router-dom';
 import { useTheme } from '../../../context/ThemeContext';
 import { HOME_DATA } from '../../../data/sections/home';
 import { IMAGES } from '../../../data/images';
@@ -9,6 +10,15 @@ import Button from '../../UI/Button';
 const Hero = () => {
   const { theme } = useTheme();
   const { hero } = HOME_DATA;
+  const navigate = useNavigate();
+  
+  const handleExploreEvents = () => {
+    navigate('/events');
+  };
+
+  const handleViewProjects = () => {
+    navigate('/projects');
+  };
   
   return (
     <Parallax
@@ -53,10 +63,18 @@ const Hero = () => {
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.5 }}
                 >
-                  <Button variant="primary" size="lg">
+                  <Button 
+                    variant="primary" 
+                    size="lg"
+                    onClick={handleExploreEvents}
+                  >
                     {hero.cta.primary.text}
                   </Button>
-                  <Button variant="outline-secondary" size="lg">
+                  <Button 
+                    variant="outline-secondary" 
+                    size="lg"
+                    onClick={handleViewProjects}
+                  >
                     {hero.cta.secondary.text}
                   </Button>
                 </motion.div>

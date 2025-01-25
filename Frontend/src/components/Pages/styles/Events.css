@@ -1,36 +1,29 @@
 .events-page {
+  min-height: 100vh;
   background-color: var(--color-background);
   color: var(--color-text);
-  min-height: 100vh;
   padding: 4rem 2rem;
 }
 
 .events-header {
+  background: var(--gradient-primary);
+  padding: 4rem 0;
   text-align: center;
-  margin-bottom: 4rem;
+  color: white;
 }
 
 .events-header h1 {
-  font-size: var(--font-size-h1);
-  font-family: var(--font-primary);
-  font-weight: var(--font-weight-bold);
+  font-size: 3rem;
+  font-weight: bold;
   margin-bottom: 1rem;
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  display: inline-block;
-  line-height: var(--line-height-tight);
+  color: white;
 }
 
 .events-header p {
-  font-size: var(--font-size-body-large);
-  font-family: var(--font-primary);
-  font-weight: var(--font-weight-regular);
-  color: var(--color-secondary);
-  max-width: 600px;
+  font-size: 1.2rem;
+  opacity: 0.9;
+  max-width: 800px;
   margin: 0 auto;
-  line-height: var(--line-height-normal);
 }
 
 .events-content {
@@ -87,8 +80,16 @@
     grid-template-columns: 300px;
   }
 
+  .events-header {
+    padding: 3rem 1rem;
+  }
+
   .events-header h1 {
     font-size: 2.5rem;
+  }
+
+  .events-header p {
+    font-size: 1rem;
   }
 
   .events-page {

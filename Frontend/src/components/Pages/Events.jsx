@@ -37,8 +37,10 @@ const Events = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <h1>ACM Events & Hackathons</h1>
-        <p>Join our community of innovators and participate in exciting tech events</p>
+        <div className="container">
+          <h1>ACM Events & Hackathons</h1>
+          <p>Join our community of innovators and participate in exciting tech events</p>
+        </div>
       </motion.div>
 
       <div className="events-content">

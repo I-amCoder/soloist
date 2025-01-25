@@ -6,30 +6,26 @@
 }
 
 .projects-header {
+  background: var(--gradient-primary);
+  padding: 4rem 0;
   text-align: center;
-  margin-bottom: 4rem;
-  padding: 3rem 0;
+  color: white;
 }
 
 .projects-header h1 {
-  font-size: var(--font-size-h1);
-  font-family: var(--font-primary);
-  font-weight: var(--font-weight-bold);
+  font-size: 3rem;
+  font-weight: bold;
   margin-bottom: 1rem;
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  display: inline-block;
-  line-height: var(--line-height-tight);
+  color: white;
+  text-transform: none;
+  letter-spacing: normal;
 }
 
 .projects-header p {
-  font-size: var(--font-size-body-large);
-  font-family: var(--font-primary);
-  font-weight: var(--font-weight-regular);
-  color: var(--color-secondary);
-  line-height: var(--line-height-normal);
+  font-size: 1.2rem;
+  opacity: 0.9;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .projects-content {
@@ -66,11 +62,29 @@
 }
 
 @media (max-width: 768px) {
+  .projects-header {
+    padding: 3rem 1rem;
+  }
+
   .projects-header h1 {
     font-size: 2.5rem;
   }
 
+  .projects-header p {
+    font-size: 1rem;
+  }
+
   .projects-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-header h1 {
+    font-size: 2.75rem;
+  }
+
+  .projects-header p {
+    font-size: 1.125rem;
   }
 } 

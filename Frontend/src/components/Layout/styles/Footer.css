@@ -1,0 +1,80 @@
+.footer {
+  background: var(--color-background-dark);
+  color: var(--color-text-light);
+  padding: 4rem 0 2rem;
+  position: relative;
+}
+
+/* Add styles for social links */
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.social-icon {
+  color: var(--color-text-light);
+  transition: all 0.3s ease;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Individual social icon hover effects */
+.social-icon.linkedin:hover {
+  background: #0077b5;
+  color: white;
+  box-shadow: 0 0 15px rgba(0, 119, 181, 0.5);
+}
+
+.social-icon.instagram:hover {
+  background: #e4405f;
+  color: white;
+  box-shadow: 0 0 15px rgba(228, 64, 95, 0.5);
+}
+
+.social-icon.facebook:hover {
+  background: #1877f2;
+  color: white;
+  box-shadow: 0 0 15px rgba(24, 119, 242, 0.5);
+}
+
+/* Rest of your existing footer styles */
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-text-light);
+}
+
+.footer-section p {
+  color: var(--color-text-light-secondary);
+  margin-bottom: 1rem;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 2rem;
+  text-align: center;
+  color: var(--color-text-light-secondary);
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 3rem 1rem 2rem;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+} 
