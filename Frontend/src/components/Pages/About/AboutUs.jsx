@@ -95,7 +95,7 @@ const AboutUs = () => {
 
       <div className="about-content container">
         <motion.section 
-          className="about-section mission-section"
+          className="about-section mission-section" style={{ marginTop: '2rem' }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -109,11 +109,20 @@ const AboutUs = () => {
           </p>
         </motion.section>
 
-        <div className="values-grid">
+        <div className="values-grid" style={{ 
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+          gap: '2.5rem',
+          justifyContent: 'center',
+          alignItems: 'center', 
+          maxWidth: '1200px',
+          margin: '0 auto',
+          padding: '0 2rem'
+        }}>
           {[
             {
               icon: <FaGlobe />,
-              title: "Global Impact",
+              title: "Global Impact", 
               description: "Connecting with 100,000+ ACM members worldwide"
             },
             {
@@ -153,6 +162,12 @@ const AboutUs = () => {
                 scale: 1.05,
                 boxShadow: "0 8px 30px rgba(0,0,0,0.12)"
               }}
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}
             >
               <div className="value-icon">{value.icon}</div>
               <h3>{value.title}</h3>
@@ -163,7 +178,7 @@ const AboutUs = () => {
 
         {/* New Achievements Section */}
         <motion.section 
-          className="about-section achievements-section"
+          className="about-section achievements-section" style={{ marginTop: '4rem' }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -195,7 +210,14 @@ const AboutUs = () => {
           transition={{ duration: 0.5 }}
         >
           <h2>Executive Council</h2>
-          <div className="contact-grid">
+          <div className="contact-grid" style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            gap: '2rem',
+            maxWidth: '1200px',
+            margin: '0 auto'
+          }}>
             {executiveMembers.map((member, index) => (
               <motion.div 
                 key={index}
@@ -205,6 +227,10 @@ const AboutUs = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ scale: 1.05 }}
+                style={{
+                  flex: '0 1 300px',
+                  maxWidth: '300px'
+                }}
               >
                 <h3>{member.name}</h3>
                 <p className="role">{member.role}</p>
