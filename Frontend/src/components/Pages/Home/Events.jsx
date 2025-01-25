@@ -68,7 +68,7 @@ const HomeEvents = () => {
                       <h3>{event.title}</h3>
                       <p>{event.description}</p>
                       <span className="event-cta">
-                        Register Now <span className="arrow">→</span>
+                        Details <span className="arrow">→</span>
                       </span>
                     </div>
                   </div>

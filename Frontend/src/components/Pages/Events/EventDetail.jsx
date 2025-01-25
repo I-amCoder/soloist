@@ -147,39 +147,47 @@ const EventDetail = () => {
     </>
   );
 
-  const renderPastEvent = () => (
-    <>
-      {event.results?.winners && (
-        <motion.section
-          className="event-section"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-        >
-          <h2>Results</h2>
-          <div className="winners-grid">
-            {event.results.winners.map((winner, index) => (
-              <div key={index} className="winner-card">
-                <h3>{winner.place}</h3>
-                <h4>{winner.team}</h4>
-                <p className="project-name">{winner.project}</p>
-                <p className="project-description">{winner.description}</p>
-              </div>
-            ))}
-          </div>
-        </motion.section>
-      )}
+  const renderPastEvent = () => {
+    const defaultGallery = [
+      { url: 'https://images.unsplash.com/photo-1557683304-673a23048d34', caption: 'Opening Ceremony' },
+      { url: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c', caption: 'Hackathon' },
+      { url: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d', caption: 'Results' },
+    ];
 
-      {event.gallery && (
+    const gallery = event.gallery && event.gallery.length > 0 ? event.gallery : defaultGallery;
+
+    return (
+      <>
+        {event.results?.winners && (
+          <motion.section
+            className="event-section"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+          >
+            <h2>Results</h2>
+            <div className="winners-grid">
+              {event.results.winners.map((winner, index) => (
+                <div key={index} className="winner-card">
+                  <h3>{winner.place}</h3>
+                  <h4>{winner.team}</h4>
+                  <p className="project-name">{winner.project}</p>
+                  <p className="project-description">{winner.description}</p>
+                </div>
+              ))}
+            </div>
+          </motion.section>
+        )}
+
         <motion.section
           className="event-section"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
         >
-          <h2>Event Gallery</h2>
+          <h2>Previous Event Glimpse</h2>
           <div className="gallery-grid">
-            {event.gallery.map((item, index) => (
+            {gallery.map((item, index) => (
               <div 
                 key={index} 
                 className="gallery-item"
@@ -192,29 +200,29 @@ const EventDetail = () => {
             ))}
           </div>
         </motion.section>
-      )}
 
-      {selectedImage && (
-        <div className="image-modal">
-          <div className="modal-overlay" onClick={() => setSelectedImage(null)} />
-          <div className="modal-container">
-            <button 
-              className="close-button"
-              onClick={() => setSelectedImage(null)}
-            >
-              ×
-            </button>
-            <div className="modal-content">
-              <img src={selectedImage.url} alt={selectedImage.caption} />
-              {selectedImage.caption && (
-                <p className="modal-caption">{selectedImage.caption}</p>
-              )}
+        {selectedImage && (
+          <div className="image-modal">
+            <div className="modal-overlay" onClick={() => setSelectedImage(null)} />
+            <div className="modal-container">
+              <button 
+                className="close-button"
+                onClick={() => setSelectedImage(null)}
+              >
+                ×
+              </button>
+              <div className="modal-content">
+                <img src={selectedImage.url} alt={selectedImage.caption} />
+                {selectedImage.caption && (
+                  <p className="modal-caption">{selectedImage.caption}</p>
+                )}
+              </div>
             </div>
           </div>
-        </div>
-      )}
-    </>
-  );
+        )}
+      </>
+    );
+  };
 
   return (
     <div className="event-detail-page">
@@ -235,12 +243,15 @@ const EventDetail = () => {
             </div>
             <h1>{event.title}</h1>
             <p>{event.fullDescription}</p>
-            {!isPastEvent && event.registrationLink && (
+            <p className="event-additional-info">
+              {event.additionalInfo}
+            </p>
+            {event.isUpcoming && (
               <motion.button
                 className="register-button"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => window.location.href = event.registrationLink}
+                onClick={() => window.open("https://example.com", "_blank")}
               >
                 Register Now
               </motion.button>

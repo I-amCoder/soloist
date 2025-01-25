@@ -23,11 +23,11 @@ const EventCard = ({ event, index, type }) => {
         <h3>{event.title}</h3>
         <p>{event.description}</p>
         {type === 'upcoming' ? (
-          <Link to={event.registrationLink} className="event-button">
-            Register Now
+          <Link to={`/events/${event.slug}`} target="_blank" className="event-button">
+            Details
           </Link>
         ) : (
-          <Link to={event.projectsLink} className="event-button secondary">
+          <Link to={event.projectsLink ?? "https://github.com"} target="_blank" className="event-button secondary">
             View Projects
           </Link>
         )}
